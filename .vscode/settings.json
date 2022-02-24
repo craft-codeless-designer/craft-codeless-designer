@@ -1,0 +1,38 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsx-tags]": {
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescriptreact",
+    "*.tsx": "typescriptreact"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "Wscats.eno"
+  }
+}
