@@ -1,6 +1,10 @@
 import { useEditor } from '@craftjs/core';
 import { Button, Col, Row } from 'antd';
-import './NavBar.css';
+import styled from 'styled-components';
+
+const NavBarWrapper = styled.div`
+  border-bottom: 1px solid #ccc;
+`;
 
 /**
  * @class NavBar
@@ -13,7 +17,7 @@ export const NavBar = props => {
   const { actions, query } = useEditor();
 
   return (
-    <div className="navbar">
+    <NavBarWrapper>
       <Row>
         <Col span={12}>
           <span>Logo</span>
@@ -45,6 +49,6 @@ export const NavBar = props => {
           <Button>Help</Button>
         </Col>
       </Row>
-    </div>
+    </NavBarWrapper>
   );
 };

@@ -1,5 +1,4 @@
 import { Element, Frame } from '@craftjs/core';
-import './CanvasArea.css';
 
 /**
  * @class CanvasArea
@@ -11,7 +10,7 @@ import './CanvasArea.css';
 export const CanvasArea = props => {
   return (
     <Frame>
-      <Element is="div" canvas className="canvasArea"></Element>
+      <Element is="div" canvas style={{ border: '1px solid #ccc', padding: '10px', width: '100%' }}></Element>
     </Frame>
   );
 };

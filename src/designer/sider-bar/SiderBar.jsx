@@ -1,10 +1,16 @@
 import { Tabs } from 'antd';
+import styled from 'styled-components';
 import { IconList } from './icon-list/IconList';
 import { LayersPanel } from './layers-panel/LayersPanel';
 import { SettingsContainer } from './settings/settings-container/SettingsContainer';
-import './SiderBar.css';
 
 const { TabPane } = Tabs;
+const SiderBarWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+`;
 
 /**
  * @class SiderBar
@@ -15,7 +21,7 @@ const { TabPane } = Tabs;
  */
 export const SiderBar = props => {
   return (
-    <div className="siderBar">
+    <SiderBarWrapper>
       <Tabs type="card">
         <TabPane tab="Components" key="1">
           <IconList></IconList>
@@ -27,6 +33,6 @@ export const SiderBar = props => {
           <LayersPanel></LayersPanel>
         </TabPane>
       </Tabs>
-    </div>
+    </SiderBarWrapper>
   );
 };

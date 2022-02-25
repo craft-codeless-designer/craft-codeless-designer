@@ -1,7 +1,6 @@
 import { useNode } from '@craftjs/core';
 import { Button } from 'antd';
 import React from 'react';
-import './CButton.css';
 import { CButtonSettings } from './CButtonSettings';
 
 /**

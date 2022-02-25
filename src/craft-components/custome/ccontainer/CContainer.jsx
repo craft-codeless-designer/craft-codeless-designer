@@ -1,7 +1,15 @@
 import { useNode } from '@craftjs/core';
 import React from 'react';
-import './CContainer.css';
+import styled from 'styled-components';
 import { CContainerSettings } from './CContainerSettings';
+
+const CContainerWrapper = styled.div`
+  background: #ccc;
+  border: 1px solid rgb(32, 32, 32);
+  margin: 10px 0;
+  min-height: 40px;
+  padding: 10px;
+`;
 
 /**
  * @class CContainer
@@ -15,11 +23,7 @@ export const CContainer = ({ children }) => {
     connectors: { connect, drag },
   } = useNode();
 
-  return (
-    <div className="ccontainer" ref={ref => connect(drag(ref))}>
-      {children}
-    </div>
-  );
+  return <CContainerWrapper ref={ref => connect(drag(ref))}>{children}</CContainerWrapper>;
 };
 
 CContainer.craft = {
