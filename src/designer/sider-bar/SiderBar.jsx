@@ -1,13 +1,14 @@
 import { Tabs } from 'antd';
-import { IconList } from '../icon-list/IconList';
-import { LayersPanel } from '../layers-panel/LayersPanel';
-import './SettingsContainer.css';
+import { IconList } from './icon-list/IconList';
+import { LayersPanel } from './layers-panel/LayersPanel';
+import { SettingsContainer } from './settings-container/SettingsContainer';
+import './SiderBar.css';
 
 const { TabPane } = Tabs;
 
-export const SettingsContainer = props => {
+export const SiderBar = props => {
   return (
-    <div className="settingsContainer">
+    <div className="siderBar">
       <Tabs
         onChange={evt => {
           console.log('change');
@@ -18,7 +19,7 @@ export const SettingsContainer = props => {
           <IconList></IconList>
         </TabPane>
         <TabPane tab="属性" key="2">
-          属性配置面板
+          <SettingsContainer></SettingsContainer>
         </TabPane>
         <TabPane tab="层级" key="3">
           <LayersPanel></LayersPanel>

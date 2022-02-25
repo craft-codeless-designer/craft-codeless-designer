@@ -1,6 +1,7 @@
 import { useNode } from '@craftjs/core';
 import { Button } from 'antd';
 import React from 'react';
+import { ButtonSettings } from './ButtonSettings';
 
 export const MyButton = props => {
   const {
@@ -16,4 +17,7 @@ export const ButtonDefaultProps = {
 
 MyButton.craft = {
   props: ButtonDefaultProps,
+  related: {
+    toolbar: ButtonSettings,
+  },
 };

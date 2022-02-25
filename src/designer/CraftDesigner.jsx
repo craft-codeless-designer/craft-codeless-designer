@@ -5,8 +5,8 @@ import { MyButton } from '../craft-components/custome/button/Button';
 import { Container } from '../craft-components/custome/container/Container';
 import { CanvasArea } from './canvas-area/CanvasArea';
 import { NavBar } from './nav-bar/NavBar';
-import { IconList } from './settings-panel/icon-list/IconList';
-import { SettingsContainer } from './settings-panel/settings-container/SettingsContainer';
+import { IconList } from './sider-bar/icon-list/IconList';
+import { SiderBar } from './sider-bar/SiderBar';
 
 export const CraftDesigner = props => {
   return (
@@ -27,7 +27,7 @@ export const CraftDesigner = props => {
           <CanvasArea></CanvasArea>
         </Col>
         <Col span={8}>
-          <SettingsContainer></SettingsContainer>
+          <SiderBar></SiderBar>
         </Col>
       </Row>
     </Editor>

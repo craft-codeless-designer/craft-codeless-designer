@@ -1,6 +1,7 @@
 import { useNode } from '@craftjs/core';
 import React from 'react';
 import './Container.css';
+import { ContainerSettings } from './ContainerSettings';
 
 export const Container = ({ children }) => {
   const {
@@ -12,4 +13,10 @@ export const Container = ({ children }) => {
       {children}
     </div>
   );
+};
+
+Container.craft = {
+  related: {
+    toolbar: ContainerSettings,
+  },
 };
