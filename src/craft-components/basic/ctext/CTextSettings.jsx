@@ -24,11 +24,12 @@ export const CTextSettings = ({ propKey = 'color', index, onChange, value, prefi
       <ChromePicker
         color={value}
         onChange={color => {
+          let rgb = color.rgb;
           setProp(props => {
             if (Array.isArray(propValue)) {
-              props[propKey][index] = onChange ? onChange(color) : color;
+              props[propKey][index] = onChange ? onChange(rgb) : rgb;
             } else {
-              props[propKey] = onChange ? onChange(color) : color;
+              props[propKey] = onChange ? onChange(rgb) : rgb;
             }
           }, 500);
         }}
