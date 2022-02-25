@@ -1,6 +1,6 @@
 import { Element, useEditor } from '@craftjs/core';
 import { Button, Row } from 'antd';
-import { MyButton } from '../../../craft-components/custome/button/Button';
+import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { Container } from '../../../craft-components/custome/container/Container';
 import './IconList.css';
 
@@ -10,7 +10,7 @@ export const IconList = () => {
   return (
     <div className="icon-list">
       <Row>
-        <Button ref={ref => connectors.create(ref, <MyButton text="按钮"></MyButton>)}>Button</Button>
+        <Button ref={ref => connectors.create(ref, <CButton text="按钮"></CButton>)}>Button</Button>
         <Button ref={ref => connectors.create(ref, <Element is={Container} padding={20} canvas></Element>)}>Container</Button>
       </Row>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ButtonSettings = props => {
+export const CButtonSettings = props => {
   return <div>按钮配置项</div>;
 };

@@ -1,9 +1,10 @@
 import { useNode } from '@craftjs/core';
 import { Button } from 'antd';
 import React from 'react';
-import { ButtonSettings } from './ButtonSettings';
+import './CButton.css';
+import { CButtonSettings } from './CButtonSettings';
 
-export const MyButton = props => {
+export const CButton = props => {
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -11,13 +12,13 @@ export const MyButton = props => {
   return <Button ref={ref => connect(drag(ref))}>{text}</Button>;
 };
 
-export const ButtonDefaultProps = {
-  text: '按钮',
+export const CButtonDefaultProps = {
+  text: 'Button',
 };
 
-MyButton.craft = {
-  props: ButtonDefaultProps,
+CButton.craft = {
+  props: CButtonDefaultProps,
   related: {
-    toolbar: ButtonSettings,
+    toolbar: CButtonSettings,
   },
 };

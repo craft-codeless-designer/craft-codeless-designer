@@ -1,7 +1,7 @@
 import { Tabs } from 'antd';
 import { IconList } from './icon-list/IconList';
 import { LayersPanel } from './layers-panel/LayersPanel';
-import { SettingsContainer } from './settings-container/SettingsContainer';
+import { SettingsContainer } from './settings/settings-container/SettingsContainer';
 import './SiderBar.css';
 
 const { TabPane } = Tabs;
@@ -15,13 +15,13 @@ export const SiderBar = props => {
         }}
         type="card"
       >
-        <TabPane tab="组件" key="1">
+        <TabPane tab="Components" key="1">
           <IconList></IconList>
         </TabPane>
-        <TabPane tab="属性" key="2">
+        <TabPane tab="Settings" key="2">
           <SettingsContainer></SettingsContainer>
         </TabPane>
-        <TabPane tab="层级" key="3">
+        <TabPane tab="Layers" key="3">
           <LayersPanel></LayersPanel>
         </TabPane>
       </Tabs>
