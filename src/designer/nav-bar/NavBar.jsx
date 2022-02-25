@@ -2,6 +2,13 @@ import { useEditor } from '@craftjs/core';
 import { Button, Col, Row } from 'antd';
 import './NavBar.css';
 
+/**
+ * @class NavBar
+ *
+ * 设计器顶部导航条。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const NavBar = props => {
   const { actions, query } = useEditor();
 

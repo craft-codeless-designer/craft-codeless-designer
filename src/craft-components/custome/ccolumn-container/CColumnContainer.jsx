@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ColumnContainer = props => {
+export const CColumnContainer = props => {
   return (
     <div>
       <div>第1列</div>

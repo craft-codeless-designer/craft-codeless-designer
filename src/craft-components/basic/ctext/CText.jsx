@@ -2,6 +2,13 @@ import { useEditor, useNode } from '@craftjs/core';
 import ContentEditable from 'react-contenteditable';
 import { CTextSettings } from './CTextSettings';
 
+/**
+ * @class CText
+ *
+ * 包装原始的 ContentEditable 组件，暴露给 Designer。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const CText = ({ fontSize, textAlign, fontWeight, color, shadow, text, margin }) => {
   const {
     connectors: { connect },

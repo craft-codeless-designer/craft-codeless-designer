@@ -2,6 +2,13 @@ import { useNode } from '@craftjs/core';
 import React from 'react';
 import { ChromePicker } from 'react-color';
 
+/**
+ * @class CButtonSettings
+ *
+ * CButton 对应的属性配置面板。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const CButtonSettings = ({ propKey = 'color', index, onChange, value, prefix, ...props }) => {
   const {
     actions: { setProp },

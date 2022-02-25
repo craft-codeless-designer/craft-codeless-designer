@@ -6,6 +6,13 @@ import './SiderBar.css';
 
 const { TabPane } = Tabs;
 
+/**
+ * @class SiderBar
+ *
+ * 侧边栏。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const SiderBar = props => {
   return (
     <div className="siderBar">

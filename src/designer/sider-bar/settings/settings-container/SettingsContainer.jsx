@@ -2,6 +2,13 @@ import { useEditor } from '@craftjs/core';
 import React from 'react';
 import './SettingsContainer.css';
 
+/**
+ * @class SettingsContainer
+ *
+ * 配置项容器。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const SettingsContainer = props => {
   const { active, related } = useEditor((state, query) => {
     const currentlySelectedNodeId = query.getEvent('selected').first();

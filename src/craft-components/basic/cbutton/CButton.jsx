@@ -4,6 +4,13 @@ import React from 'react';
 import './CButton.css';
 import { CButtonSettings } from './CButtonSettings';
 
+/**
+ * @class CButton
+ *
+ * 包装原始的 Button 组件，暴露给 Designer。
+ *
+ * @author 大漠穷秋<damoqiongqiu@126.com>
+ */
 export const CButton = props => {
   const {
     connectors: { connect, drag },
