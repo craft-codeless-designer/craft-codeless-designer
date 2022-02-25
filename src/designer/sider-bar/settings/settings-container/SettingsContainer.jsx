@@ -11,8 +11,6 @@ export const SettingsContainer = props => {
     };
   });
 
-  console.log('related-->', related);
-
   return (
     <div>
       {active && related.toolbar && React.createElement(related.toolbar)}

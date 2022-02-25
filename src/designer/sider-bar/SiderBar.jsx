@@ -9,12 +9,7 @@ const { TabPane } = Tabs;
 export const SiderBar = props => {
   return (
     <div className="siderBar">
-      <Tabs
-        onChange={evt => {
-          console.log('change');
-        }}
-        type="card"
-      >
+      <Tabs type="card">
         <TabPane tab="Components" key="1">
           <IconList></IconList>
         </TabPane>

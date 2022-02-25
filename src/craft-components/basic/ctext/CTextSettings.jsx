@@ -2,7 +2,7 @@ import { useNode } from '@craftjs/core';
 import React from 'react';
 import { ChromePicker } from 'react-color';
 
-export const CButtonSettings = ({ propKey = 'color', index, onChange, value, prefix, ...props }) => {
+export const CTextSettings = ({ propKey = 'color', index, onChange, value, prefix, ...props }) => {
   const {
     actions: { setProp },
     propValue,

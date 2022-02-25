@@ -2,6 +2,7 @@ import { Editor } from '@craftjs/core';
 import { Col, Row } from 'antd';
 import React from 'react';
 import { CButton } from '../craft-components/basic/cbutton/CButton';
+import { CText } from '../craft-components/basic/ctext/CText';
 import { Container } from '../craft-components/custome/container/Container';
 import { CanvasArea } from './canvas-area/CanvasArea';
 import { NavBar } from './nav-bar/NavBar';
@@ -10,7 +11,7 @@ import { SiderBar } from './sider-bar/SiderBar';
 
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ CButton, Container, IconList }}>
+    <Editor resolver={{ CButton, Container, IconList, CText }}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');
