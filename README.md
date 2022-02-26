@@ -15,6 +15,6 @@
 - yarn install
 - npm start
 
-## 7. License
+## License
 
 [MIT licensed](./LICENSE).
