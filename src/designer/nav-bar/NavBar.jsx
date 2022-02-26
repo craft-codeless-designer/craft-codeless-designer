@@ -1,9 +1,62 @@
+import {
+  DeleteOutlined,
+  DownloadOutlined,
+  EyeOutlined,
+  GithubOutlined,
+  QuestionCircleOutlined,
+  RedoOutlined,
+  SaveOutlined,
+  UndoOutlined,
+} from '@ant-design/icons';
 import { useEditor } from '@craftjs/core';
 import { Button, Col, Row } from 'antd';
 import styled from 'styled-components';
+import CCDIcon from '../../assets/ccd-icon.svg';
 
 const NavBarWrapper = styled.div`
   border-bottom: 1px solid #ccc;
+  height: 44px;
+  overflow: hidden;
+  width: 100vw;
+  line-height: 44px;
+  padding: 0px 15px;
+  background: #261c2c;
+  color: #f7f7f7;
+
+  a {
+    img {
+      width: 60px;
+      margin-top: -8px;
+      margin-left: -15px;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .versionText {
+    position: absolute;
+    font-size: 10px;
+    padding: 2px;
+    border-radius: 0;
+    left: 246px;
+    top: 17px;
+    height: 16px;
+    line-height: 12px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .buttonGroup {
+    button {
+      background: #3e2c41;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+    }
+  }
 `;
 
 /**
@@ -19,34 +72,40 @@ export const NavBar = props => {
   return (
     <NavBarWrapper>
       <Row>
-        <Col span={12}>
-          <span>Logo</span>
+        <Col span={12} style={{ textAlign: 'left' }}>
+          <a href="javascript:void(0);">
+            <img src={CCDIcon}></img>
+          </a>
+          <span>Craft Codeless Designer</span>
+          <div className="versionText">v0.20.0</div>
         </Col>
-        <Col span={12}>
-          <Button>Preview</Button>
-          <Button>Undo</Button>
-          <Button>Redo</Button>
-          <Button
-            onClick={evt => {
-              //保存数据
-              const json = query.serialize();
-              console.log(json);
-              window.localStorage.setItem('test-data', JSON.stringify(json));
-            }}
-          >
-            Save
-          </Button>
-          <Button
-            onClick={evt => {
-              //重新加载数据
-              const data = props.onLoadData && props.onLoadData(evt);
-              console.log(data);
-              data && actions.deserialize(data);
-            }}
-          >
-            Load
-          </Button>
-          <Button>Help</Button>
+        <Col span={12} style={{ textAlign: 'end' }}>
+          <Button.Group className="buttonGroup">
+            <Button title="Preview the page." icon={<EyeOutlined style={{ color: '#fff' }} />}></Button>
+            <Button title="Delete, hit Delete key." icon={<DeleteOutlined style={{ color: '#fff' }} />} />
+            <Button title="Undo" icon={<UndoOutlined style={{ color: '#fff' }} />}></Button>
+            <Button title="Redo" icon={<RedoOutlined style={{ color: '#fff' }} />}></Button>
+            <Button
+              title="Save"
+              icon={<SaveOutlined style={{ color: '#fff' }} />}
+              onClick={evt => {
+                const json = query.serialize();
+                console.log(json);
+                window.localStorage.setItem('test-data', JSON.stringify(json));
+              }}
+            ></Button>
+            <Button
+              title="Load"
+              icon={<DownloadOutlined style={{ color: '#fff' }} />}
+              onClick={evt => {
+                const data = props.onLoadData && props.onLoadData(evt);
+                console.log(data);
+                data && actions.deserialize(data);
+              }}
+            ></Button>
+            <Button title="Help" icon={<QuestionCircleOutlined style={{ color: '#fff' }} />}></Button>
+            <Button title="Github" icon={<GithubOutlined style={{ color: '#fff' }} />}></Button>
+          </Button.Group>
         </Col>
       </Row>
     </NavBarWrapper>

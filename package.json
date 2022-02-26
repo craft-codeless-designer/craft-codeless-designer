@@ -14,6 +14,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@craftjs/core": "^0.2.0-beta.2",
     "@craftjs/layers": "^0.2.0-beta.2",
     "antd": "^4.18.8",

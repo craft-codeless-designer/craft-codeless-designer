@@ -2,11 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { CraftDesigner } from './designer/CraftDesigner';
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-`;
+const Wrapper = styled.div``;
 
 function App() {
   return (
