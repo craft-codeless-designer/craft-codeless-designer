@@ -1,6 +1,12 @@
 import { useEditor } from '@craftjs/core';
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  overflow: hidden;
+  padding: 5px;
+`;
 
 /**
  * @class SettingsContainer
@@ -28,17 +34,20 @@ export const SettingsContainer = props => {
       autoHeightMax={'calc(100vh - 44px)'}
       thumbMinSize={30}
     >
-      {active && related.toolbar && React.createElement(related.toolbar)}
-      {!active && (
-        <div
-          style={{
-            color: 'rgba(0, 0, 0, 0.5607843137254902)',
-            fontSize: '11px',
-          }}
-        >
-          <h2 className="pb-1">Click on a component to start editing.</h2>
-        </div>
-      )}
+      <Wrapper>
+        {active && related.toolbar && React.createElement(related.toolbar)}
+        {!active && (
+          <div
+            style={{
+              color: '#938787',
+              fontWeight: '500',
+              fontSize: '14px',
+            }}
+          >
+            Click on a component to edit its properties.
+          </div>
+        )}
+      </Wrapper>
     </Scrollbars>
   );
 };
