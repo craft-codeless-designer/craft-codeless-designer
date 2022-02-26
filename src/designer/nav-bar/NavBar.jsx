@@ -116,7 +116,13 @@ export const NavBar = props => {
               }}
             ></Button>
             <Button title="Help" icon={<QuestionCircleOutlined style={{ color: '#fff' }} />}></Button>
-            <Button title="Github" icon={<GithubOutlined style={{ color: '#fff' }} />}></Button>
+            <Button
+              title="Github"
+              icon={<GithubOutlined style={{ color: '#fff' }} />}
+              onClick={evt => {
+                window.open('https://github.com/craft-codeless-designer/craft-codeless-designer', '_blank');
+              }}
+            ></Button>
           </Button.Group>
         </Col>
       </Row>
