@@ -1,5 +1,6 @@
 import { Editor } from '@craftjs/core';
 import React from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import { CButton } from '../craft-components/basic/cbutton/CButton';
 import { CText } from '../craft-components/basic/ctext/CText';
@@ -13,8 +14,7 @@ const MainContainer = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   padding: 0;
   margin: 0;
@@ -56,7 +56,17 @@ export const CraftDesigner = props => {
       ></NavBar>
       <MainContainer>
         <div className="canvasArea">
-          <CanvasArea></CanvasArea>
+          <Scrollbars
+            autoHide
+            autoHideTimeout={1000}
+            autoHideDuration={50}
+            autoHeight
+            autoHeightMin={0}
+            autoHeightMax={'calc(100vh - 44px)'}
+            thumbMinSize={30}
+          >
+            <CanvasArea></CanvasArea>
+          </Scrollbars>
         </div>
         <div className="siderBar">
           <SiderBar></SiderBar>
