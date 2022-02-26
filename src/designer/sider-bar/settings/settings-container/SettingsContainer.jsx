@@ -1,5 +1,6 @@
 import { useEditor } from '@craftjs/core';
 import React from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 /**
  * @class SettingsContainer
@@ -18,7 +19,15 @@ export const SettingsContainer = props => {
   });
 
   return (
-    <div>
+    <Scrollbars
+      autoHide
+      autoHideTimeout={1000}
+      autoHideDuration={50}
+      autoHeight
+      autoHeightMin={0}
+      autoHeightMax={'calc(100vh - 44px)'}
+      thumbMinSize={30}
+    >
       {active && related.toolbar && React.createElement(related.toolbar)}
       {!active && (
         <div
@@ -30,6 +39,6 @@ export const SettingsContainer = props => {
           <h2 className="pb-1">Click on a component to start editing.</h2>
         </div>
       )}
-    </div>
+    </Scrollbars>
   );
 };

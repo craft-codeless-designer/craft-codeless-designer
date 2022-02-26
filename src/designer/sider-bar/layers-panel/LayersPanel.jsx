@@ -1,4 +1,5 @@
 import { Layers } from '@craftjs/layers';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 /**
  * @class LayersPanel
@@ -8,5 +9,17 @@ import { Layers } from '@craftjs/layers';
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const LayersPanel = props => {
-  return <Layers expandRootOnLoad={true} />;
+  return (
+    <Scrollbars
+      autoHide
+      autoHideTimeout={1000}
+      autoHideDuration={50}
+      autoHeight
+      autoHeightMin={0}
+      autoHeightMax={'calc(100vh - 44px)'}
+      thumbMinSize={30}
+    >
+      <Layers expandRootOnLoad={true} />
+    </Scrollbars>
+  );
 };

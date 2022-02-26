@@ -8,8 +8,7 @@ const { TabPane } = Tabs;
 const SiderBarWrapper = styled.div`
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #cfdaf0;
 
   /* override antd default tab styles */
@@ -47,6 +46,12 @@ const SiderBarWrapper = styled.div`
   .ant-tabs-card.ant-tabs-bottom > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
   .ant-tabs-card.ant-tabs-top > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
   .ant-tabs-card.ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0px;
+  }
+  .ant-tabs-top > .ant-tabs-nav,
+  .ant-tabs-bottom > .ant-tabs-nav,
+  .ant-tabs-top > div > .ant-tabs-nav,
+  .ant-tabs-bottom > div > .ant-tabs-nav {
     margin: 0px;
   }
   .ant-tabs-tab {
