@@ -4,8 +4,6 @@
 
 <h1 align="center">CCD: Craft Codeless Designer</h1>
 
-<h3 align="center">Craft 零代码设计器</h3>
-
 ## 简介
 
 基于 Craft.js 的零代码设计器。
