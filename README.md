@@ -14,3 +14,7 @@
 - cd craft-codeless-designer
 - yarn install
 - npm start
+
+## 7. License
+
+[MIT licensed](./LICENSE).
