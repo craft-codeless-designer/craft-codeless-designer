@@ -5,7 +5,7 @@
     "email": "damoqiongqiu@126.com"
   },
   "version": "1.0.2",
-  "repository": "https://gitee.com/craft-codeless-designer/craft-codeless-designer.git",
+  "repository": "https://github.com/craft-codeless-designer/craft-codeless-designer.git",
   "description": "An approach to build a Codeless Designer with React, and Craft.js.",
   "scripts": {
     "start": "react-scripts start",
