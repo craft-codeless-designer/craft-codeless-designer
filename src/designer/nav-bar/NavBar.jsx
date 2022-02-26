@@ -9,7 +9,7 @@ import {
   UndoOutlined,
 } from '@ant-design/icons';
 import { useEditor } from '@craftjs/core';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, message, Row } from 'antd';
 import styled from 'styled-components';
 import CCDIcon from '../../assets/ccd-icon.svg';
 
@@ -89,18 +89,30 @@ export const NavBar = props => {
               title="Save"
               icon={<SaveOutlined style={{ color: '#fff' }} />}
               onClick={evt => {
-                const json = query.serialize();
-                console.log(json);
-                window.localStorage.setItem('test-data', JSON.stringify(json));
+                try {
+                  const json = query.serialize();
+                  console.log(json);
+                  window.localStorage.setItem('test-data', JSON.stringify(json));
+                  message.success('Data saved to window.localStorage.');
+                } catch (error) {
+                  console.error(error);
+                  message.error('Save data failed.');
+                }
               }}
             ></Button>
             <Button
               title="Load"
               icon={<DownloadOutlined style={{ color: '#fff' }} />}
               onClick={evt => {
-                const data = props.onLoadData && props.onLoadData(evt);
-                console.log(data);
-                data && actions.deserialize(data);
+                try {
+                  const data = props.onLoadData && props.onLoadData(evt);
+                  console.log(data);
+                  data && actions.deserialize(data);
+                  message.success('Load data success.');
+                } catch (error) {
+                  console.error(error);
+                  message.error('Load data failed.');
+                }
               }}
             ></Button>
             <Button title="Help" icon={<QuestionCircleOutlined style={{ color: '#fff' }} />}></Button>
