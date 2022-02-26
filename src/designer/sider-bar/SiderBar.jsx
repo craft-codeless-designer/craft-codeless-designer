@@ -10,6 +10,41 @@ const SiderBarWrapper = styled.div`
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+
+  /* override antd default tab styles */
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list,
+  .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-list {
+    position: relative;
+    display: flex;
+    transition: transform 0.3s;
+    width: 100%;
+  }
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
+    margin: 0;
+    padding: 8px 16px;
+    border-right: 1px solid #f0f0f0;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-card.ant-tabs-bottom > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-card.ant-tabs-top > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-card.ant-tabs-bottom > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0px;
+  }
+  .ant-tabs-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 14px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+  }
 `;
 
 /**
@@ -22,7 +57,7 @@ const SiderBarWrapper = styled.div`
 export const SiderBar = props => {
   return (
     <SiderBarWrapper>
-      <Tabs type="card">
+      <Tabs type="card" centered>
         <TabPane tab="Components" key="1">
           <IconList></IconList>
         </TabPane>

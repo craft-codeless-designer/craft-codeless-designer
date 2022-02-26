@@ -1,12 +1,5 @@
 import { Element, Frame } from '@craftjs/core';
 
-const styleObj = {
-  border: '1px solid #ccc',
-  padding: '10px',
-  width: '100%',
-  backgroundColor: '#e0e0e0',
-};
-
 /**
  * @class CanvasArea
  *
@@ -17,7 +10,7 @@ const styleObj = {
 export const CanvasArea = props => {
   return (
     <Frame>
-      <Element is="div" canvas style={styleObj}></Element>
+      <Element is="div" canvas></Element>
     </Frame>
   );
 };

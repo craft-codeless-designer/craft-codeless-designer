@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import CCDIcon from '../../assets/ccd-icon.svg';
 
 const NavBarWrapper = styled.div`
-  border-bottom: 1px solid #ccc;
+  border: none;
   height: 44px;
   overflow: hidden;
   width: 100vw;
