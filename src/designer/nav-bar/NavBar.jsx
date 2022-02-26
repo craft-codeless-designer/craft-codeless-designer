@@ -73,7 +73,7 @@ export const NavBar = props => {
     <NavBarWrapper>
       <Row>
         <Col span={12} style={{ textAlign: 'left' }}>
-          <a href="javascript:void(0);">
+          <a href="#">
             <img src={CCDIcon}></img>
           </a>
           <span>Craft Codeless Designer</span>

@@ -7,3 +7,10 @@
 ## 简介
 
 基于 Craft.js 的零代码设计器。
+
+## 用法
+
+- clone this repo
+- cd craft-codeless-designer
+- yarn install
+- npm start

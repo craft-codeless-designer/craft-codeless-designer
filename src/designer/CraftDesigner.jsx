@@ -22,7 +22,7 @@ const MainContainer = styled.div`
   .canvasArea {
     flex: 1;
     background-color: '#6E85B2';
-    padding: 0;
+    padding: 15px;
     margin: 0;
   }
 
