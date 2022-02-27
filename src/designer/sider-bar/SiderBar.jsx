@@ -2,7 +2,7 @@ import { Tabs } from 'antd';
 import styled from 'styled-components';
 import { IconList } from './icon-list/IconList';
 import { LayersPanel } from './layers-panel/LayersPanel';
-import { SettingsContainer } from './settings/settings-container/SettingsContainer';
+import { SettingsContainer } from './settings/SettingsContainer';
 
 const { TabPane } = Tabs;
 const SiderBarWrapper = styled.div`
