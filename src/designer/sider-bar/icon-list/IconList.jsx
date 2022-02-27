@@ -1,29 +1,25 @@
-import { UndoOutlined } from '@ant-design/icons';
+import { BorderOutlined, FontSizeOutlined } from '@ant-design/icons';
 import { Element, useEditor } from '@craftjs/core';
-import { Button, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
+import ButtonIcon from '../../../assets/button.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { CText } from '../../../craft-components/basic/ctext/CText';
 import { CContainer } from '../../../craft-components/custome/ccontainer/CContainer';
+import { Icon } from './Icon';
 
 const IconListWrapper = styled.div`
-  padding: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 15px 10px 0px 15px;
   overflow: hidden;
 `;
-
-const colStyle = { textAlign: 'center' };
-
-const buttonStyle = {
-  width: '120px',
-  overflow: 'hidden',
-  margin: '5px',
-};
 
 /**
  * @class IconList
  *
- * 可拖拽的组件图标。
+ * 侧边栏图标列表。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
@@ -41,25 +37,24 @@ export const IconList = () => {
       thumbMinSize={30}
     >
       <IconListWrapper>
-        <Row justify="center">
-          <Col span={12} style={colStyle}>
-            <Button icon={<UndoOutlined style={{ color: '#000' }} />} style={buttonStyle} ref={ref => connectors.create(ref, <CText></CText>)}>
-              Text
-            </Button>
+        <Row justify="center" align="middle" gutter={[5, 15]}>
+          <Col span={8}>
+            <Icon label="Text" icon={<FontSizeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
           </Col>
-          <Col span={12} style={colStyle}>
-            <Button style={buttonStyle} ref={ref => connectors.create(ref, <CButton text="按钮"></CButton>)}>
-              Button
-            </Button>
+          <Col span={8}>
+            <Icon
+              label="Button"
+              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={ButtonIcon}></img>}
+              component={<CButton text="按钮"></CButton>}
+            ></Icon>
           </Col>
-        </Row>
-        <Row justify="center">
-          <Col span={12} style={colStyle}>
-            <Button style={buttonStyle} ref={ref => connectors.create(ref, <Element is={CContainer} padding={20} canvas></Element>)}>
-              Container
-            </Button>
+          <Col span={8}>
+            <Icon
+              label="Container"
+              icon={<BorderOutlined style={{ color: '#fff', fontSize: 40 }} />}
+              component={<Element is={CContainer} padding={20} canvas></Element>}
+            ></Icon>
           </Col>
-          <Col span={12} style={colStyle}></Col>
         </Row>
       </IconListWrapper>
     </Scrollbars>
