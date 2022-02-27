@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
 
 /**
- * @class ColorPicker
+ * @class CColorPicker
  *
  * 颜色选择器。
  *
@@ -13,14 +13,11 @@ import { ChromePicker } from 'react-color';
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const ColorPicker = props => {
-  const { propKey = 'color', onChange } = props;
-  //useNode() 钩子可以直接从 EditorContext 上获得当前选中的节点数据
+export const CColorPicker = ({ propKey = 'color', onChange, ...props }) => {
   const {
     actions: { setProp },
     propValue,
   } = useNode(node => {
-    console.log(node.data);
     return { propValue: node.data.props[propKey] };
   });
   const [pickerVisable, setPickerVisable] = useState(false);
@@ -51,7 +48,10 @@ export const ColorPicker = props => {
           onBlur={evt => {
             setPickerVisable(false);
           }}
-          style={{ display: 'inline-block' }}
+          style={{
+            position: 'fixed',
+            zIndex: 9999,
+          }}
         >
           <ChromePicker
             color={propValue}

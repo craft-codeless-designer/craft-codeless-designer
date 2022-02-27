@@ -1,5 +1,6 @@
 import React from 'react';
-import { ColorPicker } from '../../../designer/sider-bar/settings/form-items/ColorPicker';
+import { CColorPicker } from '../../../designer/sider-bar/settings/form-items/CColorPicker';
+import { CInputNumber } from '../../../designer/sider-bar/settings/form-items/CInputNumber';
 
 /**
  * @class CTextSettings
@@ -9,9 +10,12 @@ import { ColorPicker } from '../../../designer/sider-bar/settings/form-items/Col
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const CTextSettings = props => {
-  console.log(JSON.stringify(props));
+  // FIXME:添加更多配置项，margin/padding/font-size/font-weight/align
   return (
-    <ColorPicker {...props}></ColorPicker>
-    // FIXME:添加更多配置项，margin/padding/font-size/font-weight/align
+    <>
+      <CColorPicker {...props} propKey="color"></CColorPicker>
+      <CInputNumber {...props} propKey="fontSize"></CInputNumber>
+      <CInputNumber {...props} propKey="fontWeight" min={1} max={1000}></CInputNumber>
+    </>
   );
 };
