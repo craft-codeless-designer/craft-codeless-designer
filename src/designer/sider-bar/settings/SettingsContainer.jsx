@@ -3,9 +3,9 @@ import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const SettingsWrapper = styled.div`
   overflow: hidden;
-  padding: 5px;
+  padding: 15px;
 `;
 
 /**
@@ -34,7 +34,7 @@ export const SettingsContainer = props => {
       autoHeightMax={'calc(100vh - 44px)'}
       thumbMinSize={30}
     >
-      <Wrapper>
+      <SettingsWrapper>
         {active && related.toolbar && React.createElement(related.toolbar)}
         {!active && (
           <div
@@ -47,7 +47,7 @@ export const SettingsContainer = props => {
             Click on a component to edit its properties.
           </div>
         )}
-      </Wrapper>
+      </SettingsWrapper>
     </Scrollbars>
   );
 };
