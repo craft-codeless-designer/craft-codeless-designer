@@ -1,4 +1,5 @@
 import { Editor } from '@craftjs/core';
+import cx from 'classnames';
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
@@ -7,6 +8,7 @@ import { CText } from '../craft-components/basic/ctext/CText';
 import { CContainer } from '../craft-components/custome/ccontainer/CContainer';
 import { CanvasArea } from './canvas-area/CanvasArea';
 import { NavBar } from './nav-bar/NavBar';
+import { RenderNode } from './RenderNode';
 import { IconList } from './sider-bar/icon-list/IconList';
 import { SiderBar } from './sider-bar/SiderBar';
 
@@ -21,7 +23,7 @@ const MainContainer = styled.div`
 
   .canvasArea {
     flex: 1;
-    background-color: '#6E85B2';
+    background-color: #f7f7f7;
     margin: 0;
   }
 
@@ -41,7 +43,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ CButton, CContainer, IconList, CText }}>
+    <Editor resolver={{ CButton, CContainer, IconList, CText }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');
@@ -53,8 +55,8 @@ export const CraftDesigner = props => {
           return testData;
         }}
       ></NavBar>
-      <MainContainer>
-        <div className="canvasArea">
+      <MainContainer className="page-container">
+        <div className={cx(['canvasArea craftjs-renderer'])}>
           <Scrollbars
             autoHide
             autoHideTimeout={1000}

@@ -1,0 +1,15 @@
+.component-selected {
+  position: relative;
+}
+
+.component-selected:after {
+  content: ' ';
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: 2px dashed #3e2c41;
+}
