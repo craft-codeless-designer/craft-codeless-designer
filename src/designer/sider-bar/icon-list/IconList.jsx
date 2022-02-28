@@ -1,9 +1,20 @@
-import { BorderOutlined, FontSizeOutlined } from '@ant-design/icons';
+import {
+  BarChartOutlined,
+  BorderOutlined,
+  FileImageOutlined,
+  FontSizeOutlined,
+  FormOutlined,
+  TableOutlined,
+  YoutubeOutlined,
+} from '@ant-design/icons';
 import { Element, useEditor } from '@craftjs/core';
 import { Col, Row } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import ButtonIcon from '../../../assets/button.svg';
+import Column1Icon from '../../../assets/column-1.svg';
+import Column2Icon from '../../../assets/column-2.svg';
+import Column3Icon from '../../../assets/column-3.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { CText } from '../../../craft-components/basic/ctext/CText';
 import { CContainer } from '../../../craft-components/custome/ccontainer/CContainer';
@@ -37,9 +48,24 @@ export const IconList = () => {
       thumbMinSize={30}
     >
       <IconListWrapper>
-        <Row justify="center" align="middle" gutter={[5, 15]}>
+        <Row align="middle" gutter={[5, 15]}>
           <Col span={8}>
             <Icon label="Text" icon={<FontSizeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="Image" icon={<FileImageOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="Form" icon={<FormOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="Data Grid" icon={<TableOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
           </Col>
           <Col span={8}>
             <Icon
@@ -52,6 +78,27 @@ export const IconList = () => {
             <Icon
               label="Container"
               icon={<BorderOutlined style={{ color: '#fff', fontSize: 40 }} />}
+              component={<Element is={CContainer} padding={20} canvas></Element>}
+            ></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon
+              label="1 Column"
+              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column1Icon}></img>}
+              component={<Element is={CContainer} padding={20} canvas></Element>}
+            ></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon
+              label="2 Columns"
+              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column2Icon}></img>}
+              component={<Element is={CContainer} padding={20} canvas></Element>}
+            ></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon
+              label="3 Columns"
+              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column3Icon}></img>}
               component={<Element is={CContainer} padding={20} canvas></Element>}
             ></Icon>
           </Col>
