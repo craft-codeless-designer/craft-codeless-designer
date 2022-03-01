@@ -62,7 +62,7 @@ const NavBarWrapper = styled.div`
 /**
  * @class NavBar
  *
- * 设计器顶部导航条。
+ * The navigation bar at the top of the designer.
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */

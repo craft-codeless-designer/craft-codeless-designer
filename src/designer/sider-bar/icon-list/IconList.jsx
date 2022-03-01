@@ -1,12 +1,4 @@
-import {
-  BarChartOutlined,
-  BorderOutlined,
-  FileImageOutlined,
-  FontSizeOutlined,
-  FormOutlined,
-  TableOutlined,
-  YoutubeOutlined,
-} from '@ant-design/icons';
+import { BarChartOutlined, FileImageOutlined, FontSizeOutlined, FormOutlined, TableOutlined, YoutubeOutlined } from '@ant-design/icons';
 import { Element, useEditor } from '@craftjs/core';
 import { Col, Row } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -15,9 +7,11 @@ import ButtonIcon from '../../../assets/button.svg';
 import Column1Icon from '../../../assets/column-1.svg';
 import Column2Icon from '../../../assets/column-2.svg';
 import Column3Icon from '../../../assets/column-3.svg';
+import RowIcon from '../../../assets/row.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { CText } from '../../../craft-components/basic/ctext/CText';
-import { CContainer } from '../../../craft-components/custome/ccontainer/CContainer';
+import { CColumn } from '../../../craft-components/layout/ccolumn/CColumn';
+import { CRow } from '../../../craft-components/layout/crow/CRow';
 import { Icon } from './Icon';
 
 const IconListWrapper = styled.div`
@@ -76,30 +70,30 @@ export const IconList = () => {
           </Col>
           <Col span={8}>
             <Icon
-              label="Container"
-              icon={<BorderOutlined style={{ color: '#fff', fontSize: 40 }} />}
-              component={<Element is={CContainer} padding={20} canvas></Element>}
+              label="Row"
+              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={RowIcon}></img>}
+              component={<CRow></CRow>}
             ></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="1 Column"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column1Icon}></img>}
-              component={<Element is={CContainer} padding={20} canvas></Element>}
+              component={<Element is={CColumn} padding={20} canvas></Element>}
             ></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="2 Columns"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column2Icon}></img>}
-              component={<Element is={CContainer} padding={20} canvas></Element>}
+              component={<Element is={CRow} padding={20} canvas></Element>}
             ></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="3 Columns"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column3Icon}></img>}
-              component={<Element is={CContainer} padding={20} canvas></Element>}
+              component={<Element is={CRow} padding={20} canvas></Element>}
             ></Icon>
           </Col>
         </Row>

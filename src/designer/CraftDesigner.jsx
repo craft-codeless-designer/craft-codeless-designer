@@ -5,10 +5,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import { CButton } from '../craft-components/basic/cbutton/CButton';
 import { CText } from '../craft-components/basic/ctext/CText';
-import { CContainer } from '../craft-components/custome/ccontainer/CContainer';
-import { CanvasArea } from './canvas-area/CanvasArea';
+import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
+import { CContainer } from '../craft-components/layout/CContainer';
+import { CRow } from '../craft-components/layout/crow/CRow';
 import { NavBar } from './nav-bar/NavBar';
 import { RenderNode } from './RenderNode';
+import { RootCanvasArea } from './root-canvas-area/RootCanvasArea';
 import { IconList } from './sider-bar/icon-list/IconList';
 import { SiderBar } from './sider-bar/SiderBar';
 
@@ -43,7 +45,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ CButton, CContainer, IconList, CText }} onRender={RenderNode}>
+    <Editor resolver={{ CButton, CRow, IconList, CText, CColumn, CContainer }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');
@@ -66,7 +68,7 @@ export const CraftDesigner = props => {
             autoHeightMax={'calc(100vh - 44px)'}
             thumbMinSize={30}
           >
-            <CanvasArea></CanvasArea>
+            <RootCanvasArea></RootCanvasArea>
           </Scrollbars>
         </div>
         <div className="siderBar">

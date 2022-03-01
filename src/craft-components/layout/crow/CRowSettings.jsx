@@ -1,12 +1,12 @@
 import React from 'react';
 
 /**
- * @class ContainerSettings
+ * @class CRowSettings
  *
- * CContainer 对应的属性配置面板。
+ * Settings of CRow component.
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CContainerSettings = props => {
+export const CRowSettings = props => {
   return <div>容器配置项</div>;
 };
