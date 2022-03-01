@@ -1,12 +1,15 @@
-import { Element, Frame } from '@craftjs/core';
+import { Element, Frame, useNode } from '@craftjs/core';
+import React from 'react';
+import styled from 'styled-components';
+import { CColumn } from '../../craft-components/layout/ccolumn/CColumn';
 
-const styleObj = {
-  width: '100%',
-  minHeight: '200px',
-  height: '100%',
-  padding: '5px', //FIXME: only available in design mode
-  backgroundColor: '#e0e0e0',
-};
+const RootAreaWrapper = styled.div`
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
+  padding: 5px; //FIXME: only available in design mode
+  background-color: #e0e0e0;
+`;
 
 /**
  * @class RootCanvasArea
@@ -16,11 +19,29 @@ const styleObj = {
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const RootCanvasArea = props => {
+
+export const RootCanvasArea = ({ children }) => {
+  const {
+    connectors: { connect, drag },
+  } = useNode();
+  return <RootAreaWrapper ref={ref => connect(drag(ref))}>{children}</RootAreaWrapper>;
+};
+
+RootCanvasArea.craft = {
+  displayName: 'RootCanvasArea',
+  rules: {
+    canMoveIn: nodes => nodes.every(node => node.data.type !== CColumn),
+  },
+};
+
+/**
+ * HOC
+ * @returns
+ */
+export function createCanvasArea() {
   return (
     <Frame>
-      {/* FIXME: can NOT drop CColumn here */}
-      <Element is="div" canvas style={styleObj}></Element>
+      <Element is={RootCanvasArea} canvas></Element>
     </Frame>
   );
-};
+}

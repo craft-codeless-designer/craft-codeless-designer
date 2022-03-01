@@ -9,7 +9,7 @@ import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
 import { CRow } from '../craft-components/layout/crow/CRow';
 import { NavBar } from './nav-bar/NavBar';
 import { RenderNode } from './RenderNode';
-import { RootCanvasArea } from './root-canvas-area/RootCanvasArea';
+import { createCanvasArea, RootCanvasArea } from './root-canvas-area/RootCanvasArea';
 import { IconList } from './sider-bar/icon-list/IconList';
 import { SiderBar } from './sider-bar/SiderBar';
 
@@ -44,7 +44,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ CButton, CRow, IconList, CText, CColumn }} onRender={RenderNode}>
+    <Editor resolver={{ CButton, CRow, IconList, CText, CColumn, RootCanvasArea }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');
@@ -67,7 +67,7 @@ export const CraftDesigner = props => {
             autoHeightMax={'calc(100vh - 44px)'}
             thumbMinSize={30}
           >
-            <RootCanvasArea></RootCanvasArea>
+            {createCanvasArea()}
           </Scrollbars>
         </div>
         <div className="siderBar">
