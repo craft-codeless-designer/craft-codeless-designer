@@ -3,10 +3,10 @@ import React from 'react';
 /**
  * @class CRowSettings
  *
- * Settings of CRow component.
+ * Settings of CRow.
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const CRowSettings = props => {
-  return <div>容器配置项</div>;
+  return <div>Row 对应的配置项</div>;
 };
