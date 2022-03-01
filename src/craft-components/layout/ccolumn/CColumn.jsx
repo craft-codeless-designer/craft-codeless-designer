@@ -3,12 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { CColumnSettings } from './CColumnSettings';
 
+//FIXME: this style should only be available in design mode
 const CColumnWrapper = styled.div`
-  background: #ccc;
-  border: 1px solid rgb(32, 32, 32);
-  margin: 10px 0;
+  background: #eee;
+  border: 1px dashed rgb(32, 32, 32);
+  margin: 0px 0;
   min-height: 40px;
   padding: 10px;
+  flex: 1;
 `;
 
 /**
@@ -30,7 +32,11 @@ export const CColumn = ({ children }) => {
 };
 
 CColumn.craft = {
+  displayName: 'CColumn',
   related: {
     toolbar: CColumnSettings,
+  },
+  rules: {
+    canMoveIn: nodes => nodes.every(node => node.data.type !== CColumn),
   },
 };

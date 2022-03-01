@@ -3,6 +3,8 @@ import { Element, Frame } from '@craftjs/core';
 const styleObj = {
   width: '100%',
   minHeight: '200px',
+  height: '100%',
+  padding: '5px', //FIXME: only available in design mode
   backgroundColor: '#e0e0e0',
 };
 
@@ -17,6 +19,7 @@ const styleObj = {
 export const RootCanvasArea = props => {
   return (
     <Frame>
+      {/* FIXME: can NOT drop CColumn here */}
       <Element is="div" canvas style={styleObj}></Element>
     </Frame>
   );

@@ -11,7 +11,7 @@ import RowIcon from '../../../assets/row.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { CText } from '../../../craft-components/basic/ctext/CText';
 import { CColumn } from '../../../craft-components/layout/ccolumn/CColumn';
-import { CRow } from '../../../craft-components/layout/crow/CRow';
+import { CRow, nestedRow } from '../../../craft-components/layout/crow/CRow';
 import { Icon } from './Icon';
 
 const IconListWrapper = styled.div`
@@ -72,7 +72,7 @@ export const IconList = () => {
             <Icon
               label="Row"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={RowIcon}></img>}
-              component={<CRow></CRow>}
+              component={nestedRow()}
             ></Icon>
           </Col>
           <Col span={8}>

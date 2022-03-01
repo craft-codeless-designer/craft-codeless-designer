@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { CButton } from '../craft-components/basic/cbutton/CButton';
 import { CText } from '../craft-components/basic/ctext/CText';
 import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
-import { CContainer } from '../craft-components/layout/CContainer';
 import { CRow } from '../craft-components/layout/crow/CRow';
 import { NavBar } from './nav-bar/NavBar';
 import { RenderNode } from './RenderNode';
@@ -45,7 +44,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ CButton, CRow, IconList, CText, CColumn, CContainer }} onRender={RenderNode}>
+    <Editor resolver={{ CButton, CRow, IconList, CText, CColumn }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');

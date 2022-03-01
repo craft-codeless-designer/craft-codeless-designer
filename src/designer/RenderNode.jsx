@@ -100,7 +100,7 @@ export const RenderNode = ({ render }) => {
                 alignItems: 'center',
                 display: 'flex',
                 position: 'fixed',
-                backgroundColor: '#3e2c41',
+                backgroundColor: 'rgb(17, 138, 210)',
                 left: getPos(dom).left,
                 top: getPos(dom).top,
                 zIndex: 9999,

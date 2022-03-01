@@ -1,7 +1,7 @@
-import { Element } from '@craftjs/core';
+import { Element, useNode } from '@craftjs/core';
 import React from 'react';
-import { CContainer } from '../CContainer';
-import { CRowSettings } from './CRowSettings';
+import styled from 'styled-components';
+import { CColumn } from '../ccolumn/CColumn';
 
 /**
  * @class CRow
@@ -13,29 +13,30 @@ import { CRowSettings } from './CRowSettings';
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
+//FIXME: this style should only be available in design mode
+const CRowWrapper = styled.div`
+  background: #ccc;
+  border: 1px solid rgb(32, 32, 32);
+  margin: 5px 0;
+  min-height: 40px;
+  padding: 10px;
+  display: flex;
+`;
+
 export const CRow = ({ children }) => {
-  return (
-    <div>
-      <Element is={CContainer} canvas id="inner_el"></Element>
-    </div>
-  );
+  const {
+    connectors: { connect, drag },
+  } = useNode();
+  return <CRowWrapper ref={ref => connect(drag(ref))}>{children}</CRowWrapper>;
 };
 
 CRow.craft = {
-  related: {
-    toolbar: CRowSettings,
-  },
+  displayName: 'CRow',
   rules: {
-    canDrag: (self, helper) => true,
-    canDrop: (incoming, self, helper) => {
-      //Only CColumns are allowed inside CRow.
-      // if (incoming instanceof CColumn) {
-      //   return true;
-      // }
-      // return false;
-      return true;
-    },
-    canMoveIn: (incoming, self, helper) => true,
-    canMoveOut: (outgoing, self, helper) => true,
+    canMoveIn: nodes => nodes.every(node => node.data.type === CColumn),
   },
 };
+
+export function nestedRow(props = {}) {
+  return <Element is={CRow} canvas {...props}></Element>;
+}
