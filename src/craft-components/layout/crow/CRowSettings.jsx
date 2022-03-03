@@ -1,5 +1,6 @@
 import { Form } from 'antd';
 import React from 'react';
+import { CColorPicker } from '../../../designer/sider-bar/settings/form-items/CColorPicker';
 import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin';
 
 /**
@@ -12,6 +13,9 @@ import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin
 export const CRowSettings = props => {
   return (
     <Form layout="vertical">
+      <Form.Item label="Background Color">
+        <CColorPicker {...props} propKey="bgColor"></CColorPicker>
+      </Form.Item>
       <Form.Item label="Margin">
         <CMargin {...props} propKey="margin"></CMargin>
       </Form.Item>

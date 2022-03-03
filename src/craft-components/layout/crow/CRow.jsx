@@ -7,9 +7,9 @@ const defaultProps = {
   margin: [0, 0, 0, 0],
   padding: [10, 10, 10, 10],
   border: '1px solid rgb(32, 32, 32)',
-  background: '#ccc',
   minHeight: '40px',
   display: 'flex',
+  bgColor: { r: 92, g: 90, b: 90, a: 1 },
 };
 
 /**
@@ -28,7 +28,7 @@ export const CRow = props => {
     ...props,
   };
 
-  const { margin, padding, border, background, minHeight, display, children } = props;
+  const { margin, padding, border, bgColor, minHeight, display, children } = props;
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -41,9 +41,9 @@ export const CRow = props => {
         margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
         padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
         border,
-        background,
         minHeight,
         display,
+        backgroundColor: `rgba(${Object.values(bgColor)})`,
       }}
     >
       {children}
