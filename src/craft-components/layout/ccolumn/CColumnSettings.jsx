@@ -21,6 +21,12 @@ export const CColumnSettings = props => {
       <Form.Item label="Minimum Height">
         <CInputNumber {...props} propKey="minHeight" min={1} max={1000}></CInputNumber>
       </Form.Item>
+      <Form.Item label="Flex">
+        <CInputNumber {...props} propKey="flex" min={1} max={100}></CInputNumber>
+      </Form.Item>
+      <Form.Item label="Width">
+        <CInputNumber {...props} propKey="width" min={-1} max={1000}></CInputNumber>
+      </Form.Item>
       <Form.Item label="Border">
         <CBorder {...props} propKey="border"></CBorder>
       </Form.Item>

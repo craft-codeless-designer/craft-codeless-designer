@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const SettingsWrapper = styled.div`
   overflow: hidden;
   padding: 15px;
+  margin-bottom: 15px;
 `;
 
 /**
