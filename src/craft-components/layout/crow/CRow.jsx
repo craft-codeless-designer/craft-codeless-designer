@@ -3,6 +3,15 @@ import React from 'react';
 import { CColumn } from '../ccolumn/CColumn';
 import { CRowSettings } from './CRowSettings';
 
+const defaultProps = {
+  margin: [0, 0, 0, 0],
+  padding: [10, 10, 10, 10],
+  border: '1px solid rgb(32, 32, 32)',
+  background: '#ccc',
+  minHeight: '40px',
+  display: 'flex',
+};
+
 /**
  * @class CRow
  *
@@ -13,16 +22,6 @@ import { CRowSettings } from './CRowSettings';
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-
-const defaultProps = {
-  margin: [0, 0, 0, 0],
-  padding: [10, 10, 10, 10],
-  border: '1px solid rgb(32, 32, 32)',
-  background: '#ccc',
-  minHeight: '40px',
-  display: 'flex',
-};
-
 export const CRow = props => {
   props = {
     ...defaultProps,
