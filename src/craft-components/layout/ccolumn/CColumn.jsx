@@ -1,31 +1,18 @@
 import { useNode } from '@craftjs/core';
 import React from 'react';
-import styled from 'styled-components';
 import { CColumnSettings } from './CColumnSettings';
 
-//FIXME: this style should only be available in design mode
-const CColumnWrapper = styled.div`
-  background: #eee;
-  border: 1px dashed rgb(32, 32, 32);
-  margin: 0px 0;
-  min-height: 40px;
-  padding: 10px;
-  flex: 1;
-`;
-
 const defaultProps = {
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  justifyContent: 'flex-start',
-  fillSpace: 'no',
-  padding: ['0', '0', '0', '0'],
-  margin: ['0', '0', '0', '0'],
-  background: { r: 255, g: 255, b: 255, a: 1 },
-  color: { r: 0, g: 0, b: 0, a: 1 },
-  shadow: 0,
-  radius: 0,
-  width: '100%',
-  height: 'auto',
+  height: 40,
+  minHeight: 40,
+  margin: [0, 0, 0, 0],
+  padding: [10, 10, 10, 10],
+  //NOTE: {border:'1px solid rgba(32,32,32,1)'} 被拆分成了 3 个属性进行存储和操作，避免进行 CSS 字符串解析
+  borderSize: 1,
+  borderType: 'dashed',
+  borderColor: { r: 32, g: 32, b: 32, a: 1 },
+  bgColor: { r: 250, g: 250, b: 250, a: 1 },
+  flex: 1,
 };
 
 /**
@@ -43,7 +30,10 @@ export const CColumn = props => {
     ...defaultProps,
     ...props,
   };
-  const { flexDirection, alignItems, justifyContent, fillSpace, background, color, padding, margin, shadow, radius, children } = props;
+
+  console.log(props);
+
+  const { height, minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, flex, children } = props;
 
   const {
     connectors: { connect, drag },
@@ -65,13 +55,27 @@ export const CColumn = props => {
     //     flex: fillSpace === 'yes' ? 1 : 'unset',
     //   }}
     // >
-    <CColumnWrapper ref={ref => connect(drag(ref))}>{children}</CColumnWrapper>
+    <div
+      ref={ref => connect(drag(ref))}
+      style={{
+        height: `${height}px`,
+        minHeight: `${minHeight}px`,
+        margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
+        padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
+        border: `${borderSize}px ${borderType} rgba(${Object.values(borderColor)})`,
+        backgroundColor: `rgba(${Object.values(bgColor)})`,
+        flex,
+      }}
+    >
+      {children}
+    </div>
     // </Resizer>
   );
 };
 
 CColumn.craft = {
   displayName: 'CColumn',
+  props: defaultProps,
   related: {
     toolbar: CColumnSettings,
   },

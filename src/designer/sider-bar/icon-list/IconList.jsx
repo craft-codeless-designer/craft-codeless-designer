@@ -79,21 +79,21 @@ export const IconList = () => {
             <Icon
               label="1 Column"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column1Icon}></img>}
-              component={<Element is={CColumn} padding={20} canvas></Element>}
+              component={<Element is={CColumn} canvas></Element>}
             ></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="2 Columns"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column2Icon}></img>}
-              component={<Element is={CRow} padding={20} canvas></Element>}
+              component={<Element is={CRow} canvas></Element>}
             ></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="3 Columns"
               icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column3Icon}></img>}
-              component={<Element is={CRow} padding={20} canvas></Element>}
+              component={<Element is={CRow} canvas></Element>}
             ></Icon>
           </Col>
         </Row>
