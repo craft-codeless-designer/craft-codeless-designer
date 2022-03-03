@@ -9,7 +9,7 @@ const defaultProps = {
   border: '1px solid rgb(32, 32, 32)',
   minHeight: '40px',
   display: 'flex',
-  bgColor: { r: 92, g: 90, b: 90, a: 1 },
+  bgColor: { r: 200, g: 200, b: 200, a: 1 },
 };
 
 /**
