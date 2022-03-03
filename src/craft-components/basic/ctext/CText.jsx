@@ -10,7 +10,17 @@ import { CTextSettings } from './CTextSettings';
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const CText = props => {
-  const { fontSize, textAlign, fontWeight, color, shadow, text, margin = [0, 0, 0, 0], padding = [0, 0, 0, 0] } = props;
+  const {
+    fontSize = 15,
+    textAlign = 'left',
+    fontWeight = 400,
+    color = { r: 92, g: 90, b: 90, a: 1 },
+    shadow = 0,
+    text = 'Text',
+    margin = [0, 0, 0, 0],
+    padding = [0, 0, 0, 0],
+  } = props;
+
   const {
     connectors: { connect },
     actions: { setProp },
