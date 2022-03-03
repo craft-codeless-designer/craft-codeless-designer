@@ -25,6 +25,7 @@ export const CBorder = ({ onChange, ...props }) => {
 
   const inputStyle = {
     width: '100%',
+    marginBottom: '1px',
   };
 
   return (

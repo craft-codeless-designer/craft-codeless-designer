@@ -27,8 +27,9 @@ export const CMargin = ({ propKey = 'margin', onChange, ...props }) => {
     textAlign: 'right',
   };
 
-  const numberInputStyle = {
+  const inputStyle = {
     width: '80px',
+    marginBottom: '1px',
   };
 
   return (
@@ -38,7 +39,7 @@ export const CMargin = ({ propKey = 'margin', onChange, ...props }) => {
         <InputNumber
           min={0}
           value={propValue[0]}
-          style={numberInputStyle}
+          style={inputStyle}
           onChange={val => {
             setProp(props => {
               props[propKey][0] = onChange ? onChange(val) : val;
@@ -51,7 +52,7 @@ export const CMargin = ({ propKey = 'margin', onChange, ...props }) => {
         <InputNumber
           min={0}
           value={propValue[1]}
-          style={numberInputStyle}
+          style={inputStyle}
           onChange={val => {
             setProp(props => {
               props[propKey][1] = onChange ? onChange(val) : val;
@@ -64,7 +65,7 @@ export const CMargin = ({ propKey = 'margin', onChange, ...props }) => {
         <InputNumber
           min={0}
           value={propValue[2]}
-          style={numberInputStyle}
+          style={inputStyle}
           onChange={val => {
             setProp(props => {
               props[propKey][2] = onChange ? onChange(val) : val;
@@ -77,7 +78,7 @@ export const CMargin = ({ propKey = 'margin', onChange, ...props }) => {
         <InputNumber
           min={0}
           value={propValue[3]}
-          style={numberInputStyle}
+          style={inputStyle}
           onChange={val => {
             setProp(props => {
               props[propKey][3] = onChange ? onChange(val) : val;
