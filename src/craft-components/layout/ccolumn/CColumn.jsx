@@ -1,4 +1,4 @@
-import { useNode } from '@craftjs/core';
+import { Element, useNode } from '@craftjs/core';
 import React from 'react';
 import { CColumnSettings } from './CColumnSettings';
 
@@ -71,3 +71,7 @@ CColumn.craft = {
     canMoveIn: nodes => nodes.every(node => node.data.type !== CColumn),
   },
 };
+
+export function getColumn(props = {}) {
+  return <Element is={CColumn} canvas {...props}></Element>;
+}

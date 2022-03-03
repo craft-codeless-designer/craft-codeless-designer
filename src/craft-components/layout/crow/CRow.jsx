@@ -65,6 +65,6 @@ CRow.craft = {
   },
 };
 
-export function nestedRow(props = {}) {
+export function getRow(props = {}) {
   return <Element is={CRow} canvas {...props}></Element>;
 }
