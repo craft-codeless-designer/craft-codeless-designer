@@ -4,10 +4,11 @@ import { CColumn } from '../ccolumn/CColumn';
 import { CRowSettings } from './CRowSettings';
 
 const defaultProps = {
+  height: 60,
+  minHeight: 40,
   margin: [0, 0, 0, 0],
   padding: [10, 10, 10, 10],
   border: '1px solid rgb(32, 32, 32)',
-  minHeight: '40px',
   display: 'flex',
   bgColor: { r: 200, g: 200, b: 200, a: 1 },
 };
@@ -28,7 +29,7 @@ export const CRow = props => {
     ...props,
   };
 
-  const { margin, padding, border, bgColor, minHeight, display, children } = props;
+  const { height, minHeight, margin, padding, border, bgColor, display, children } = props;
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -41,7 +42,8 @@ export const CRow = props => {
         margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
         padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
         border,
-        minHeight,
+        height: `${height}px`,
+        minHeight: `${minHeight}px`,
         display,
         backgroundColor: `rgba(${Object.values(bgColor)})`,
       }}

@@ -1,6 +1,7 @@
 import { Form } from 'antd';
 import React from 'react';
 import { CColorPicker } from '../../../designer/sider-bar/settings/form-items/CColorPicker';
+import { CInputNumber } from '../../../designer/sider-bar/settings/form-items/CInputNumber';
 import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin';
 
 /**
@@ -13,6 +14,12 @@ import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin
 export const CRowSettings = props => {
   return (
     <Form layout="vertical">
+      <Form.Item label="Height">
+        <CInputNumber {...props} propKey="height" min={1} max={1000}></CInputNumber>
+      </Form.Item>
+      <Form.Item label="Minimum Height">
+        <CInputNumber {...props} propKey="minHeight" min={1} max={1000}></CInputNumber>
+      </Form.Item>
       <Form.Item label="Background Color">
         <CColorPicker {...props} propKey="bgColor"></CColorPicker>
       </Form.Item>
