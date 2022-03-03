@@ -3,7 +3,6 @@ import React from 'react';
 import { CColumnSettings } from './CColumnSettings';
 
 const defaultProps = {
-  height: 40,
   minHeight: 40,
   width: -1, //如果 width 设置为负数，则自动使用 flex 参数
   flex: 1,
@@ -32,7 +31,7 @@ export const CColumn = props => {
     ...props,
   };
 
-  const { height, minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, width, flex, children } = props;
+  const { minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, width, flex, children } = props;
 
   const {
     connectors: { connect, drag },
@@ -40,7 +39,6 @@ export const CColumn = props => {
 
   const calcStyle = () => {
     let style = {
-      height: `${height}px`,
       minHeight: `${minHeight}px`,
       margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
       padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,

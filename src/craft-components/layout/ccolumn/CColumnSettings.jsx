@@ -15,9 +15,6 @@ import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin
 export const CColumnSettings = props => {
   return (
     <Form layout="vertical">
-      <Form.Item label="Height">
-        <CInputNumber {...props} propKey="height" min={1} max={1000}></CInputNumber>
-      </Form.Item>
       <Form.Item label="Minimum Height">
         <CInputNumber {...props} propKey="minHeight" min={1} max={1000}></CInputNumber>
       </Form.Item>
