@@ -11,6 +11,7 @@ import { getIframe } from '../../../craft-components/basic/ciframe/CIframe';
 import { getImg } from '../../../craft-components/basic/cimg/CImg';
 import { CText } from '../../../craft-components/basic/ctext/CText';
 import { getVideo } from '../../../craft-components/basic/cvideo/CVideo';
+import { getChart } from '../../../craft-components/cchart/CChart';
 import { getColumn } from '../../../craft-components/layout/ccolumn/CColumn';
 import { getRow } from '../../../craft-components/layout/crow/CRow';
 import { Icon } from './Icon';
@@ -57,7 +58,7 @@ export const IconList = () => {
             <Icon label="IFrame" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getIframe()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+            <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getChart()}></Icon>
           </Col>
           <Col span={8}>
             <Icon label="Form" icon={<FormOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>

@@ -1,4 +1,5 @@
 import { Element, useNode } from '@craftjs/core';
+import styled from 'styled-components';
 import { CImgSettings } from './CImgSettings';
 import { defaultImg } from './default-img';
 
@@ -17,6 +18,15 @@ const defaultProps = {
   borderColor: { r: 32, g: 32, b: 32, a: 1 },
   bgColor: { r: 250, g: 250, b: 250, a: 1 },
 };
+
+const Wrapper = styled.div`
+  img {
+    pointer-events: ${props => (props.enabled ? 'none' : 'auto')};
+    width: 100% !important;
+    height: 100% !important;
+    draggable: 'false';
+  }
+`;
 
 /**
  * @class CImg
@@ -52,14 +62,9 @@ export const CImg = props => {
   };
 
   return (
-    <img
-      ref={ref => connect(drag(ref))}
-      draggable={false}
-      src={src}
-      alt={alt}
-      // 这里需要根据 props 中传递的参数重新拼接 CSS 样式
-      style={calcStyle()}
-    />
+    <Wrapper ref={ref => connect(drag(ref))} style={calcStyle()}>
+      <img draggable="false" src={src} alt={alt} />
+    </Wrapper>
   );
 };
 

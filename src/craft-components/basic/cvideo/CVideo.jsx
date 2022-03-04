@@ -83,8 +83,8 @@ export const CVideo = props => {
   };
 
   return (
-    <Wrapper ref={connect} enabled={enabled} style={calcStyle()}>
-      <video src={src} poster={poster} alt={alt} controls />
+    <Wrapper ref={ref => connect(drag(ref))} enabled={enabled} style={calcStyle()}>
+      <video src={src} poster={poster} alt={alt} controls={controls} />
     </Wrapper>
   );
 };

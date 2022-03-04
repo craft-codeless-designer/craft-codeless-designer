@@ -8,6 +8,7 @@ import { CIframe } from '../craft-components/basic/ciframe/CIframe';
 import { CImg } from '../craft-components/basic/cimg/CImg';
 import { CText } from '../craft-components/basic/ctext/CText';
 import { CVideo } from '../craft-components/basic/cvideo/CVideo';
+import { CChart } from '../craft-components/cchart/CChart';
 import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
 import { CRow } from '../craft-components/layout/crow/CRow';
 import { RenderNode } from './editor-tools/RenderNode';
@@ -47,7 +48,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ RootCanvasArea, CButton, CRow, IconList, CText, CColumn, CImg, CVideo, CIframe }} onRender={RenderNode}>
+    <Editor resolver={{ RootCanvasArea, CButton, CRow, IconList, CText, CColumn, CImg, CVideo, CIframe, CChart }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');
