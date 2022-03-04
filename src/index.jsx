@@ -4,7 +4,6 @@ import { CImg } from './craft-components/basic/cimg/CImg';
 import { CText } from './craft-components/basic/ctext/CText';
 import { CVideo } from './craft-components/basic/cvideo/CVideo';
 import { CChart } from './craft-components/cchart/CChart';
-import { componentTypes } from './craft-components/component-types';
 import { CColumn } from './craft-components/layout/ccolumn/CColumn';
 import { CRow } from './craft-components/layout/crow/CRow';
 import { CraftDesigner } from './designer/CraftDesigner';
@@ -52,5 +51,4 @@ export {
   IconList,
   SiderBar,
   SettingsContainer,
-  componentTypes,
 };
