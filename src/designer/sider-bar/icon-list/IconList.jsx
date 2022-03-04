@@ -31,6 +31,8 @@ const IconListWrapper = styled.div`
   overflow: hidden;
 `;
 
+const iconStyle = { margin: 0, padding: 0, pointerEvents: 'none', color: '#fff', fontSize: 40 };
+
 /**
  * @class IconList
  *
@@ -54,44 +56,40 @@ export const IconList = () => {
       <IconListWrapper>
         <Row align="middle" gutter={[5, 15]}>
           <Col span={8}>
-            <Icon label="Text" icon={<FontSizeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+            <Icon label="Text" icon={<FontSizeOutlined style={iconStyle} />} component={<CText></CText>}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Image" icon={<FileImageOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getImg()}></Icon>
+            <Icon label="Image" icon={<FileImageOutlined style={iconStyle} />} component={getImg()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getVideo()}></Icon>
+            <Icon label="Video" icon={<YoutubeOutlined style={iconStyle} />} component={getVideo()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="IFrame" icon={<FileOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getIframe()}></Icon>
+            <Icon label="IFrame" icon={<FileOutlined style={iconStyle} />} component={getIframe()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Chart" icon={<AreaChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getChart()}></Icon>
+            <Icon label="Chart" icon={<AreaChartOutlined style={iconStyle} />} component={getChart()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Form" icon={<FormOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+            <Icon label="Form" icon={<FormOutlined style={iconStyle} />} component={<CText></CText>}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Data Grid" icon={<TableOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+            <Icon label="Data Grid" icon={<TableOutlined style={iconStyle} />} component={<CText></CText>}></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="Button"
-              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={ButtonIcon}></img>}
+              icon={<img width="40px" height="40px" style={iconStyle} alt="" src={ButtonIcon}></img>}
               component={<CButton text="按钮"></CButton>}
             ></Icon>
           </Col>
           <Col span={8}>
-            <Icon
-              label="Row"
-              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={RowIcon}></img>}
-              component={getRow()}
-            ></Icon>
+            <Icon label="Row" icon={<img width="40px" height="40px" style={iconStyle} alt="" src={RowIcon}></img>} component={getRow()}></Icon>
           </Col>
           <Col span={8}>
             <Icon
               label="1 Column"
-              icon={<img width="40px" height="40px" style={{ padding: 0, margin: 0, pointerEvents: 'none' }} alt="" src={Column1Icon}></img>}
+              icon={<img width="40px" height="40px" style={iconStyle} alt="" src={Column1Icon}></img>}
               component={getColumn()}
             ></Icon>
           </Col>
