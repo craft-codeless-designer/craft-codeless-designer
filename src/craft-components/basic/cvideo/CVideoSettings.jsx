@@ -7,19 +7,22 @@ import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin
 import { CTextInput } from '../../../designer/sider-bar/settings/form-items/CTextInput';
 
 /**
- * @class CImgSettings
+ * @class CVideoSettings
  *
- * CImg 对应的属性配置面板。
+ * CVideo 对应的属性配置面板。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CImgSettings = props => {
+export const CVideoSettings = props => {
   return (
     <Form layout="vertical">
-      <Form.Item label="Image Source">
+      <Form.Item label="Video Source">
         <CTextInput {...props} propKey="src"></CTextInput>
       </Form.Item>
-      <Form.Item label="Image Alt Text">
+      <Form.Item label="Video Poster">
+        <CTextInput {...props} propKey="poster"></CTextInput>
+      </Form.Item>
+      <Form.Item label="Video Alt Text">
         <CTextInput {...props} propKey="alt"></CTextInput>
       </Form.Item>
       <Form.Item label="Height">

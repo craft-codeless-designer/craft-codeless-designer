@@ -1,11 +1,12 @@
-import { Element, useNode } from '@craftjs/core';
-import { CImgSettings } from './CImgSettings';
-import { defaultImg } from './default-img';
+import { Element, useEditor, useNode } from '@craftjs/core';
+import { CVideoSettings } from './CVideoSettings';
 
 const defaultProps = {
-  src: defaultImg,
+  src: 'https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
+  poster: 'https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217',
   alt: '',
-  height: 200,
+  controls: true,
+  height: 300,
   minHeight: 200,
   width: 400,
   maxWidth: '100%',
@@ -19,19 +20,39 @@ const defaultProps = {
 };
 
 /**
- * @class CImg
+ * @class CVideo
  *
- * 包装原始的 img 标签，暴露给 Designer。
+ * 包装原始的 video 标签，暴露给 Designer。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CImg = props => {
+export const CVideo = props => {
   props = {
     ...defaultProps,
     ...props,
   };
 
-  const { src, alt, width, maxWidth, height, minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, children } = props;
+  const {
+    src,
+    poster,
+    alt,
+    controls,
+    width,
+    maxWidth,
+    height,
+    minHeight,
+    margin,
+    padding,
+    borderSize,
+    borderType,
+    borderColor,
+    bgColor,
+    children,
+  } = props;
+
+  const { enabled } = useEditor(state => ({
+    enabled: state.options.enabled,
+  }));
 
   const {
     connectors: { connect, drag },
@@ -52,25 +73,26 @@ export const CImg = props => {
   };
 
   return (
-    <img
+    <video
       ref={ref => connect(drag(ref))}
-      draggable={false}
       src={src}
+      poster={poster}
       alt={alt}
+      controls
       // 这里需要根据 props 中传递的参数重新拼接 CSS 样式
       style={calcStyle()}
     />
   );
 };
 
-CImg.craft = {
-  displayName: 'Image',
+CVideo.craft = {
+  displayName: 'Video',
   props: defaultProps,
   related: {
-    toolbar: CImgSettings,
+    toolbar: CVideoSettings,
   },
 };
 
-export function getImg(props = {}) {
-  return <Element is={CImg} canvas {...props}></Element>;
+export function getVideo(props = {}) {
+  return <Element is={CVideo} canvas {...props}></Element>;
 }

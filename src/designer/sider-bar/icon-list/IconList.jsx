@@ -9,6 +9,7 @@ import RowIcon from '../../../assets/row.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
 import { getImg } from '../../../craft-components/basic/cimg/CImg';
 import { CText } from '../../../craft-components/basic/ctext/CText';
+import { getVideo } from '../../../craft-components/basic/cvideo/CVideo';
 import { getColumn } from '../../../craft-components/layout/ccolumn/CColumn';
 import { getRow } from '../../../craft-components/layout/crow/CRow';
 import { Icon } from './Icon';
@@ -49,7 +50,7 @@ export const IconList = () => {
             <Icon label="Image" icon={<FileImageOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getImg()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
+            <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getVideo()}></Icon>
           </Col>
           <Col span={8}>
             <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
