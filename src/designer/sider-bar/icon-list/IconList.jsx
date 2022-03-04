@@ -1,4 +1,12 @@
-import { BarChartOutlined, FileImageOutlined, FontSizeOutlined, FormOutlined, TableOutlined, YoutubeOutlined } from '@ant-design/icons';
+import {
+  AreaChartOutlined,
+  FileImageOutlined,
+  FileOutlined,
+  FontSizeOutlined,
+  FormOutlined,
+  TableOutlined,
+  YoutubeOutlined,
+} from '@ant-design/icons';
 import { useEditor } from '@craftjs/core';
 import { Col, Row } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -55,10 +63,10 @@ export const IconList = () => {
             <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getVideo()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="IFrame" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getIframe()}></Icon>
+            <Icon label="IFrame" icon={<FileOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getIframe()}></Icon>
           </Col>
           <Col span={8}>
-            <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getChart()}></Icon>
+            <Icon label="Chart" icon={<AreaChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getChart()}></Icon>
           </Col>
           <Col span={8}>
             <Icon label="Form" icon={<FormOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>
