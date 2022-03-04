@@ -1,4 +1,4 @@
-import { SettingOutlined } from '@ant-design/icons';
+import { SkinFilled } from '@ant-design/icons';
 import { useNode } from '@craftjs/core';
 import { Input } from 'antd';
 import React, { useState } from 'react';
@@ -26,11 +26,14 @@ export const CColorPicker = ({ propKey = 'color', onChange, ...props }) => {
     <>
       <Input
         addonAfter={
-          <SettingOutlined
+          <SkinFilled
+            style={{
+              color: `rgba(${Object.values(propValue)})`,
+            }}
             onClick={evt => {
               setPickerVisable(!pickerVisable);
             }}
-          ></SettingOutlined>
+          ></SkinFilled>
         }
         value={`rgba(${Object.values(propValue)})`}
         onFocus={evt => {
