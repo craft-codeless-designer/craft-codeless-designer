@@ -71,7 +71,3 @@ CColumn.craft = {
     canMoveIn: nodes => nodes.every(node => node.data.type !== CColumn),
   },
 };
-
-export function getColumn(props = {}) {
-  return <Element is={CColumn} canvas {...props}></Element>;
-}

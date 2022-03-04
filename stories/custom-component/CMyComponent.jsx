@@ -1,7 +1,6 @@
 import { useNode } from '@craftjs/core';
 import React from 'react';
-import { CColumn } from '../ccolumn/CColumn';
-import { CRowSettings } from './CRowSettings';
+import { MyComponent } from './MyComponent';
 
 const defaultProps = {
   minHeight: 40,
@@ -16,16 +15,13 @@ const defaultProps = {
 };
 
 /**
- * @class CRow
+ * @class CMyComponent
  *
- * Row
- *
- * - Row has a width default to 100%.
- * - Only Columns are allowed inside a Row, any other types are forbidden.
+ * 写一个包装组件来包装 MyComponent 组件，一般用 C 作为前缀，表示这是一个 Craft 包装组件。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CRow = props => {
+export const CMyComponent = props => {
   props = {
     ...defaultProps,
     ...props,
@@ -49,18 +45,13 @@ export const CRow = props => {
         backgroundColor: `rgba(${Object.values(bgColor)})`,
       }}
     >
-      {children}
+      {/* 把普通的 MyComponent 组件包装起来。 */}
+      <MyComponent></MyComponent>
     </div>
   );
 };
 
-CRow.craft = {
-  displayName: 'CRow',
+CMyComponent.craft = {
+  displayName: 'CMyComponent',
   props: defaultProps,
-  related: {
-    toolbar: CRowSettings,
-  },
-  rules: {
-    canMoveIn: nodes => nodes.every(node => node.data.type === CColumn),
-  },
 };

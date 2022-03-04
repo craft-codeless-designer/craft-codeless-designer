@@ -59,10 +59,22 @@ const NavBarWrapper = styled.div`
   }
 `;
 
+const iconStyle = { color: '#fff' };
+
 /**
  * @class NavBar
  *
  * The navigation bar at the top of the designer.
+ *
+ * Callbacks on the props:
+ *
+ * - onPreview(evt)
+ * - onDelete(evt)
+ * - onUndo(evt)
+ * - onRedo(evt)
+ * - onSaveData(jsonStr)
+ * - onLoadData(evt)
+ * - onHelp()
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
@@ -77,23 +89,62 @@ export const NavBar = props => {
             <img src={CCDIcon}></img>
           </a>
           <span>Craft Codeless Designer</span>
-          <div className="versionText">v0.20.0</div>
+          <div className="versionText">v1.0.3</div>
         </Col>
         <Col span={12} style={{ textAlign: 'end' }}>
           <Button.Group className="buttonGroup">
-            <Button title="Preview the page." icon={<EyeOutlined style={{ color: '#fff' }} />}></Button>
-            <Button title="Delete, hit Delete key." icon={<DeleteOutlined style={{ color: '#fff' }} />} />
-            <Button title="Undo" icon={<UndoOutlined style={{ color: '#fff' }} />}></Button>
-            <Button title="Redo" icon={<RedoOutlined style={{ color: '#fff' }} />}></Button>
+            <Button
+              title="Preview the page."
+              icon={
+                <EyeOutlined
+                  style={iconStyle}
+                  onClick={evt => {
+                    props.onPreview && props.onPreview(evt);
+                  }}
+                />
+              }
+            ></Button>
+            <Button
+              title="Delete, hit Delete key."
+              icon={
+                <DeleteOutlined
+                  style={iconStyle}
+                  onClick={evt => {
+                    props.onDelete && props.onDelete(evt);
+                  }}
+                />
+              }
+            />
+            <Button
+              title="Undo"
+              icon={
+                <UndoOutlined
+                  style={iconStyle}
+                  onClick={evt => {
+                    props.onUndo && props.onUndo(evt);
+                  }}
+                />
+              }
+            ></Button>
+            <Button
+              title="Redo"
+              icon={
+                <RedoOutlined
+                  style={iconStyle}
+                  onClick={evt => {
+                    props.onRedo && props.onRedo(evt);
+                  }}
+                />
+              }
+            ></Button>
             <Button
               title="Save"
-              icon={<SaveOutlined style={{ color: '#fff' }} />}
+              icon={<SaveOutlined style={iconStyle} />}
               onClick={evt => {
                 try {
-                  const json = query.serialize();
-                  console.log(json);
-                  window.localStorage.setItem('test-data', JSON.stringify(json));
-                  message.success('Data saved to window.localStorage.');
+                  const jsonStr = query.serialize();
+                  console.log(jsonStr);
+                  props.onSaveData && props.onSaveData(jsonStr);
                 } catch (error) {
                   console.error(error);
                   message.error('Save data failed.');
@@ -102,23 +153,37 @@ export const NavBar = props => {
             ></Button>
             <Button
               title="Load"
-              icon={<DownloadOutlined style={{ color: '#fff' }} />}
+              icon={<DownloadOutlined style={iconStyle} />}
               onClick={evt => {
                 try {
                   const data = props.onLoadData && props.onLoadData(evt);
                   console.log(data);
-                  data && actions.deserialize(data);
-                  message.success('Load data success.');
+                  if (data) {
+                    actions.deserialize(data);
+                    message.success('Load data success.');
+                  } else {
+                    message.warn('Empty data or parse failed.');
+                  }
                 } catch (error) {
                   console.error(error);
                   message.error('Load data failed.');
                 }
               }}
             ></Button>
-            <Button title="Help" icon={<QuestionCircleOutlined style={{ color: '#fff' }} />}></Button>
+            <Button
+              title="Help"
+              icon={
+                <QuestionCircleOutlined
+                  style={iconStyle}
+                  onClick={evt => {
+                    props.onHelp && props.onHelp(evt);
+                  }}
+                />
+              }
+            ></Button>
             <Button
               title="Github"
-              icon={<GithubOutlined style={{ color: '#fff' }} />}
+              icon={<GithubOutlined style={iconStyle} />}
               onClick={evt => {
                 window.open('https://github.com/craft-codeless-designer/craft-codeless-designer', '_blank');
               }}

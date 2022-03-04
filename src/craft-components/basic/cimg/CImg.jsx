@@ -1,4 +1,4 @@
-import { Element, useNode } from '@craftjs/core';
+import { useNode } from '@craftjs/core';
 import styled from 'styled-components';
 import { CImgSettings } from './CImgSettings';
 import { defaultImg } from './default-img';
@@ -75,7 +75,3 @@ CImg.craft = {
     toolbar: CImgSettings,
   },
 };
-
-export function getImg(props = {}) {
-  return <Element is={CImg} canvas {...props}></Element>;
-}

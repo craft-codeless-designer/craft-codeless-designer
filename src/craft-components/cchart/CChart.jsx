@@ -1,4 +1,4 @@
-import { Element, useEditor, useNode } from '@craftjs/core';
+import { useEditor, useNode } from '@craftjs/core';
 import ReactECharts from 'echarts-for-react';
 import React from 'react';
 import { CChartSettings } from './CChartSettings';
@@ -130,7 +130,3 @@ CChart.craft = {
     toolbar: CChartSettings,
   },
 };
-
-export function getChart(props = {}) {
-  return <Element is={CChart} canvas {...props}></Element>;
-}

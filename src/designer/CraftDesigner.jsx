@@ -1,4 +1,4 @@
-import { Editor } from '@craftjs/core';
+import { Editor, Element } from '@craftjs/core';
 import cx from 'classnames';
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -14,6 +14,7 @@ import { CRow } from '../craft-components/layout/crow/CRow';
 import { RenderNode } from './editor-tools/RenderNode';
 import { NavBar } from './nav-bar/NavBar';
 import { createCanvasArea, RootCanvasArea } from './root-canvas-area/RootCanvasArea';
+import { defaultIconList } from './sider-bar/icon-list/default-icon-list';
 import { IconList } from './sider-bar/icon-list/IconList';
 import { SiderBar } from './sider-bar/SiderBar';
 
@@ -39,6 +40,21 @@ const MainContainer = styled.div`
   }
 `;
 
+const emptyFn = () => {};
+export const defaultComponentTypes = {
+  Element,
+  RootCanvasArea,
+  CButton,
+  CRow,
+  IconList,
+  CText,
+  CColumn,
+  CImg,
+  CVideo,
+  CIframe,
+  CChart,
+};
+
 /**
  * @class CraftDesigner
  *
@@ -47,19 +63,35 @@ const MainContainer = styled.div`
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const CraftDesigner = props => {
+  const {
+    onPreview = emptyFn,
+    onDelete = emptyFn,
+    onUndo = emptyFn,
+    onRedo = emptyFn,
+    onSaveData = emptyFn,
+    onLoadData = emptyFn,
+    onHelp = emptyFn,
+    showNavBar = true,
+    showSiderBar = true,
+    componentTypes = { ...defaultComponentTypes },
+    iconList = defaultIconList,
+  } = props;
+
   return (
-    <Editor resolver={{ RootCanvasArea, CButton, CRow, IconList, CText, CColumn, CImg, CVideo, CIframe, CChart }} onRender={RenderNode}>
-      <NavBar
-        onLoadData={evt => {
-          let testData = window.localStorage.getItem('test-data');
-          if (!testData) {
-            console.error('There is no data in window.localStorage.');
-            return null;
-          }
-          testData = JSON.parse(testData);
-          return testData;
-        }}
-      ></NavBar>
+    <Editor resolver={componentTypes} onRender={RenderNode}>
+      {showNavBar ? (
+        <NavBar
+          onPreview={onPreview}
+          onDelete={onDelete}
+          onUndo={onUndo}
+          onRedo={onRedo}
+          onSaveData={onSaveData}
+          onLoadData={onLoadData}
+          onHelp={onHelp}
+        ></NavBar>
+      ) : (
+        ''
+      )}
       <MainContainer className="page-container">
         <div className={cx(['canvasArea craftjs-renderer'])}>
           <Scrollbars
@@ -74,9 +106,13 @@ export const CraftDesigner = props => {
             {createCanvasArea()}
           </Scrollbars>
         </div>
-        <div className="siderBar">
-          <SiderBar></SiderBar>
-        </div>
+        {showSiderBar ? (
+          <div className="siderBar">
+            <SiderBar iconList={iconList}></SiderBar>
+          </div>
+        ) : (
+          ''
+        )}
       </MainContainer>
     </Editor>
   );

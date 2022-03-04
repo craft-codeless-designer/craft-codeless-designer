@@ -1,5 +1,6 @@
 import { Tabs } from 'antd';
 import styled from 'styled-components';
+import { defaultIconList } from './icon-list/default-icon-list';
 import { IconList } from './icon-list/IconList';
 import { LayersPanel } from './layers-panel/LayersPanel';
 import { SettingsContainer } from './settings/SettingsContainer';
@@ -77,11 +78,13 @@ const SiderBarWrapper = styled.div`
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const SiderBar = props => {
+  const { iconList = defaultIconList } = props;
+
   return (
     <SiderBarWrapper>
       <Tabs type="card" centered>
         <TabPane tab="Components" key="1">
-          <IconList></IconList>
+          <IconList iconList={iconList}></IconList>
         </TabPane>
         <TabPane tab="Settings" key="2">
           <SettingsContainer></SettingsContainer>

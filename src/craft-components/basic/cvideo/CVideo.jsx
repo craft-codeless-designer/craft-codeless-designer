@@ -1,4 +1,4 @@
-import { Element, useEditor, useNode } from '@craftjs/core';
+import { useEditor, useNode } from '@craftjs/core';
 import styled from 'styled-components';
 import { CVideoSettings } from './CVideoSettings';
 
@@ -96,7 +96,3 @@ CVideo.craft = {
     toolbar: CVideoSettings,
   },
 };
-
-export function getVideo(props = {}) {
-  return <Element is={CVideo} canvas {...props}></Element>;
-}
