@@ -10,6 +10,8 @@ Craft Codeless Designer 是一款可视化的低代码/零代码页面设计器�
 
 ## 2.用法
 
+FIXME: 需要修改这一段，按照 node 模块的方式使用。
+
     clone this repo
     cd craft-codeless-designer
     yarn install

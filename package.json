@@ -1,6 +1,6 @@
 {
   "name": "craft-codeless-designer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "https://github.com/craft-codeless-designer/craft-codeless-designer.git",
   "description": "An approach to build a Codeless Designer with React, and Craft.js.",
   "author": {
@@ -17,6 +17,12 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.map",
+    "dist/**/*.js",
+    "dist/**/*.map"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@craftjs/core": "^0.2.0-beta.2",
