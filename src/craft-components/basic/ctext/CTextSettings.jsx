@@ -23,7 +23,7 @@ export const CTextSettings = props => {
         <CInputNumber {...props} propKey="fontSize"></CInputNumber>
       </Form.Item>
       <Form.Item label="Font Weight">
-        <CInputNumber {...props} propKey="fontWeight" min={1} max={1000}></CInputNumber>
+        <CInputNumber {...props} propKey="fontWeight" min={1} max={100000}></CInputNumber>
       </Form.Item>
       <Form.Item label="Text Align">
         <CTextAlign {...props} propKey="textAlign"></CTextAlign>

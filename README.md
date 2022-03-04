@@ -24,6 +24,9 @@ Craft Codeless Designer 是一款可视化的低代码/零代码页面设计器�
 <br/>
 <br/>
 <img src="./src/assets/3.png">
+<br/>
+<br/>
+<img src="./src/assets/4.png">
 
 ## 4.主要依赖
 

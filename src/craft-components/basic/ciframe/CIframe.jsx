@@ -1,12 +1,10 @@
 import { Element, useEditor, useNode } from '@craftjs/core';
 import styled from 'styled-components';
-import { CVideoSettings } from './CVideoSettings';
+import { CIframeSettings } from './CIframeSettings';
 
 const defaultProps = {
-  src: 'https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
-  poster: 'https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217',
-  alt: '',
-  controls: true,
+  src: 'https://map.baidu.com/@13225221.26,3748918.53,12z',
+  alt: 'MDN',
   height: 300,
   minHeight: 200,
   width: 400,
@@ -21,7 +19,7 @@ const defaultProps = {
 };
 
 const Wrapper = styled.div`
-  video {
+  iframe {
     pointer-events: ${props => (props.enabled ? 'none' : 'auto')};
     width: 100% !important;
     height: 100% !important;
@@ -29,35 +27,19 @@ const Wrapper = styled.div`
 `;
 
 /**
- * @class CVideo
+ * @class CIframe
  *
- * 包装原始的 video 标签，暴露给 Designer。
+ * 包装原始的 iframe 标签，暴露给 Designer。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CVideo = props => {
+export const CIframe = props => {
   props = {
     ...defaultProps,
     ...props,
   };
 
-  const {
-    src,
-    poster,
-    alt,
-    controls,
-    width,
-    maxWidth,
-    height,
-    minHeight,
-    margin,
-    padding,
-    borderSize,
-    borderType,
-    borderColor,
-    bgColor,
-    children,
-  } = props;
+  const { src, alt, width, maxWidth, height, minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, children } = props;
 
   const { enabled } = useEditor(state => ({
     enabled: state.options.enabled,
@@ -67,7 +49,6 @@ export const CVideo = props => {
     connectors: { connect, drag },
   } = useNode();
 
-  // 这里需要根据 props 中传递的参数重新拼接 CSS 样式
   const calcStyle = () => {
     let style = {
       width: `${width}px`,
@@ -84,19 +65,19 @@ export const CVideo = props => {
 
   return (
     <Wrapper ref={connect} enabled={enabled} style={calcStyle()}>
-      <video src={src} poster={poster} alt={alt} controls />
+      <iframe src={src} alt={alt} style={{ border: 'none' }} />
     </Wrapper>
   );
 };
 
-CVideo.craft = {
-  displayName: 'Video',
+CIframe.craft = {
+  displayName: 'Iframe',
   props: defaultProps,
   related: {
-    toolbar: CVideoSettings,
+    toolbar: CIframeSettings,
   },
 };
 
-export function getVideo(props = {}) {
-  return <Element is={CVideo} canvas {...props}></Element>;
+export function getIframe(props = {}) {
+  return <Element is={CIframe} canvas {...props}></Element>;
 }

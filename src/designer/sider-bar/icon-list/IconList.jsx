@@ -7,6 +7,7 @@ import ButtonIcon from '../../../assets/button.svg';
 import Column1Icon from '../../../assets/column-1.svg';
 import RowIcon from '../../../assets/row.svg';
 import { CButton } from '../../../craft-components/basic/cbutton/CButton';
+import { getIframe } from '../../../craft-components/basic/ciframe/CIframe';
 import { getImg } from '../../../craft-components/basic/cimg/CImg';
 import { CText } from '../../../craft-components/basic/ctext/CText';
 import { getVideo } from '../../../craft-components/basic/cvideo/CVideo';
@@ -51,6 +52,9 @@ export const IconList = () => {
           </Col>
           <Col span={8}>
             <Icon label="Video" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getVideo()}></Icon>
+          </Col>
+          <Col span={8}>
+            <Icon label="IFrame" icon={<YoutubeOutlined style={{ color: '#fff', fontSize: 40 }} />} component={getIframe()}></Icon>
           </Col>
           <Col span={8}>
             <Icon label="Chart" icon={<BarChartOutlined style={{ color: '#fff', fontSize: 40 }} />} component={<CText></CText>}></Icon>

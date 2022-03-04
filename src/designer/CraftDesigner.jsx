@@ -4,6 +4,7 @@ import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import { CButton } from '../craft-components/basic/cbutton/CButton';
+import { CIframe } from '../craft-components/basic/ciframe/CIframe';
 import { CImg } from '../craft-components/basic/cimg/CImg';
 import { CText } from '../craft-components/basic/ctext/CText';
 import { CVideo } from '../craft-components/basic/cvideo/CVideo';
@@ -46,7 +47,7 @@ const MainContainer = styled.div`
  */
 export const CraftDesigner = props => {
   return (
-    <Editor resolver={{ RootCanvasArea, CButton, CRow, IconList, CText, CColumn, CImg, CVideo }} onRender={RenderNode}>
+    <Editor resolver={{ RootCanvasArea, CButton, CRow, IconList, CText, CColumn, CImg, CVideo, CIframe }} onRender={RenderNode}>
       <NavBar
         onLoadData={evt => {
           let testData = window.localStorage.getItem('test-data');

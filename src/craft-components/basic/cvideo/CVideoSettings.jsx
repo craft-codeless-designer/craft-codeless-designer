@@ -26,13 +26,13 @@ export const CVideoSettings = props => {
         <CTextInput {...props} propKey="alt"></CTextInput>
       </Form.Item>
       <Form.Item label="Height">
-        <CInputNumber {...props} propKey="height" min={0} max={1000}></CInputNumber>
+        <CInputNumber {...props} propKey="height" min={0} max={100000}></CInputNumber>
       </Form.Item>
       <Form.Item label="Minimum Height">
-        <CInputNumber {...props} propKey="minHeight" min={1} max={1000}></CInputNumber>
+        <CInputNumber {...props} propKey="minHeight" min={1} max={100000}></CInputNumber>
       </Form.Item>
       <Form.Item label="Width">
-        <CInputNumber {...props} propKey="width" min={-1} max={1000}></CInputNumber>
+        <CInputNumber {...props} propKey="width" min={-1} max={100000}></CInputNumber>
       </Form.Item>
       <Form.Item label="Border">
         <CBorder {...props} propKey="border"></CBorder>

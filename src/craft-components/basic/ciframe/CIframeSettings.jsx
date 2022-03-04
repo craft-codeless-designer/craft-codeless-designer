@@ -4,19 +4,32 @@ import { CBorder } from '../../../designer/sider-bar/settings/form-items/CBorder
 import { CColorPicker } from '../../../designer/sider-bar/settings/form-items/CColorPicker';
 import { CInputNumber } from '../../../designer/sider-bar/settings/form-items/CInputNumber';
 import { CMargin } from '../../../designer/sider-bar/settings/form-items/CMargin';
+import { CTextInput } from '../../../designer/sider-bar/settings/form-items/CTextInput';
 
 /**
- * @class CRowSettings
+ * @class CIframeSettings
  *
- * CRow 对应的属性配置面板。
+ * CIframe 对应的属性配置面板。
  *
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
-export const CRowSettings = props => {
+export const CIframeSettings = props => {
   return (
     <Form layout="vertical">
+      <Form.Item label="Iframe Source">
+        <CTextInput {...props} propKey="src"></CTextInput>
+      </Form.Item>
+      <Form.Item label="Iframe Alt Text">
+        <CTextInput {...props} propKey="alt"></CTextInput>
+      </Form.Item>
+      <Form.Item label="Height">
+        <CInputNumber {...props} propKey="height" min={0} max={100000}></CInputNumber>
+      </Form.Item>
       <Form.Item label="Minimum Height">
         <CInputNumber {...props} propKey="minHeight" min={1} max={100000}></CInputNumber>
+      </Form.Item>
+      <Form.Item label="Width">
+        <CInputNumber {...props} propKey="width" min={-1} max={100000}></CInputNumber>
       </Form.Item>
       <Form.Item label="Border">
         <CBorder {...props} propKey="border"></CBorder>
