@@ -11,6 +11,7 @@ import { CVideo } from '../craft-components/basic/cvideo/CVideo';
 import { CChart } from '../craft-components/cchart/CChart';
 import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
 import { CRow } from '../craft-components/layout/crow/CRow';
+import { DataDeserializer } from './DataDeserializer';
 import { RenderNode } from './editor-tools/RenderNode';
 import { NavBar } from './nav-bar/NavBar';
 import { RootCanvasArea } from './root-canvas-area/RootCanvasArea';
@@ -80,6 +81,7 @@ export const CraftDesigner = props => {
 
   return (
     <Editor resolver={componentTypes} onRender={RenderNode}>
+      <DataDeserializer pageData={pageData}></DataDeserializer>
       {showNavBar ? (
         <NavBar
           onPreview={onPreview}
@@ -91,7 +93,7 @@ export const CraftDesigner = props => {
           onHelp={onHelp}
         ></NavBar>
       ) : (
-        ''
+        <></>
       )}
       <MainContainer className="page-container">
         <div className={cx(['canvasArea craftjs-renderer'])}>
@@ -104,8 +106,9 @@ export const CraftDesigner = props => {
             autoHeightMax={'calc(100vh - 44px)'}
             thumbMinSize={30}
           >
+            {/* 提供初始数据： https://craft.js.org/docs/api/frame */}
             <Frame>
-              <Element is={RootCanvasArea} canvas pageData={pageData}></Element>
+              <Element is={RootCanvasArea} canvas></Element>
             </Frame>
           </Scrollbars>
         </div>
@@ -114,7 +117,7 @@ export const CraftDesigner = props => {
             <SiderBar iconList={iconList}></SiderBar>
           </div>
         ) : (
-          ''
+          <></>
         )}
       </MainContainer>
     </Editor>

@@ -1,13 +1,20 @@
 import { message } from 'antd';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CraftDesigner } from '../../src/designer/CraftDesigner';
 import { testPageData } from './test-page-data';
 
 export const QuickStart = props => {
+  const [pageData, setPageData] = useState('');
+
+  useEffect(() => {
+    //TODO:在真实的业务系统中，这里会从 Server 端接口加载页面，参见 craft-codeless-designer-demo 项目。
+    setPageData(testPageData);
+  }, [pageData]);
+
   return (
     <>
       <CraftDesigner
-        pageData={testPageData}
+        pageData={pageData}
         onSaveData={jsonStr => {
           //FIXME:handle empty string.
           window.localStorage.setItem('test-data', JSON.stringify(jsonStr));

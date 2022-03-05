@@ -148,7 +148,7 @@ export const NavBar = props => {
                   props.onSaveData && props.onSaveData(jsonStr);
                 } catch (error) {
                   console.error(error);
-                  message.error('Save data failed.');
+                  message.error(error);
                 }
               }}
             ></Button>
@@ -157,17 +157,10 @@ export const NavBar = props => {
               icon={<DownloadOutlined style={iconStyle} />}
               onClick={evt => {
                 try {
-                  const data = props.onLoadData && props.onLoadData(evt);
-                  console.log(data);
-                  if (data) {
-                    actions.deserialize(data);
-                    message.success('Load data success.');
-                  } else {
-                    message.warn('Empty data or parse failed.');
-                  }
+                  props.onLoadData && props.onLoadData(evt);
                 } catch (error) {
                   console.error(error);
-                  message.error('Load data failed.');
+                  message.error(error);
                 }
               }}
             ></Button>
