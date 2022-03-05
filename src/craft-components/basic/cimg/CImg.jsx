@@ -1,4 +1,5 @@
 import { useNode } from '@craftjs/core';
+import React from 'react';
 import styled from 'styled-components';
 import { CImgSettings } from './CImgSettings';
 import { defaultImg } from './default-img';

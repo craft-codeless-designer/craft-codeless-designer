@@ -1,5 +1,6 @@
 import { AreaChartOutlined, FileImageOutlined, FileOutlined, FontSizeOutlined, YoutubeOutlined } from '@ant-design/icons';
 import { Element } from '@craftjs/core';
+import React from 'react';
 import ButtonIcon from '../../../assets/button.svg';
 import Column1Icon from '../../../assets/column-1.svg';
 import RowIcon from '../../../assets/row.svg';

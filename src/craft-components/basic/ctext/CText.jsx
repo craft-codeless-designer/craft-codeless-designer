@@ -1,4 +1,5 @@
 import { useEditor, useNode } from '@craftjs/core';
+import React from 'react';
 import ContentEditable from 'react-contenteditable';
 import { CTextSettings } from './CTextSettings';
 

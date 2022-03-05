@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import { useEditor } from '@craftjs/core';
 import { Button, Col, message, Row } from 'antd';
+import React from 'react';
 import styled from 'styled-components';
 import CCDIcon from '../../assets/ccd-icon.svg';
 

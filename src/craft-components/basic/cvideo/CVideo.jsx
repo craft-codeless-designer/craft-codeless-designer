@@ -1,4 +1,5 @@
 import { useEditor, useNode } from '@craftjs/core';
+import React from 'react';
 import styled from 'styled-components';
 import { CVideoSettings } from './CVideoSettings';
 

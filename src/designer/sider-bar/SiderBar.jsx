@@ -1,4 +1,5 @@
 import { Tabs } from 'antd';
+import React from 'react';
 import styled from 'styled-components';
 import { defaultIconList } from './icon-list/default-icon-list';
 import { IconList } from './icon-list/IconList';

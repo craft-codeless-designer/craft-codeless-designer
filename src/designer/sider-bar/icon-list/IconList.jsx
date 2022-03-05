@@ -1,4 +1,5 @@
 import { Col, Row } from 'antd';
+import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import { defaultIconList } from './default-icon-list';
