@@ -1,11 +1,13 @@
 import { message } from 'antd';
 import React from 'react';
 import { CraftDesigner } from '../../src/designer/CraftDesigner';
+import { testPageData } from './test-page-data';
 
 export const QuickStart = props => {
   return (
     <>
       <CraftDesigner
+        pageData={testPageData}
         onSaveData={jsonStr => {
           //FIXME:handle empty string.
           window.localStorage.setItem('test-data', JSON.stringify(jsonStr));

@@ -1,5 +1,6 @@
-import { Element, Frame, useNode } from '@craftjs/core';
-import React from 'react';
+import { useEditor, useNode } from '@craftjs/core';
+import { message } from 'antd';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { CColumn } from '../../craft-components/layout/ccolumn/CColumn';
 
@@ -20,10 +21,25 @@ const RootAreaWrapper = styled.div`
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 
-export const RootCanvasArea = ({ children }) => {
+export const RootCanvasArea = props => {
   const {
     connectors: { connect, drag },
   } = useNode();
+  const { actions, query } = useEditor();
+  const { children, pageData } = props;
+
+  //pageData 必须是 JSON 对象，而不是字符串
+  useEffect(() => {
+    try {
+      if (pageData) {
+        actions.deserialize(pageData);
+      }
+    } catch (error) {
+      console.error(error);
+      message.error(error);
+    }
+  }, [props.pageData]);
+
   return <RootAreaWrapper ref={ref => connect(drag(ref))}>{children}</RootAreaWrapper>;
 };
 
@@ -33,15 +49,3 @@ RootCanvasArea.craft = {
     canMoveIn: nodes => nodes.every(node => node.data.type !== CColumn),
   },
 };
-
-/**
- * HOC
- * @returns
- */
-export function createCanvasArea() {
-  return (
-    <Frame>
-      <Element is={RootCanvasArea} canvas></Element>
-    </Frame>
-  );
-}

@@ -1,4 +1,4 @@
-import { Editor, Element } from '@craftjs/core';
+import { Editor, Element, Frame } from '@craftjs/core';
 import cx from 'classnames';
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -13,7 +13,7 @@ import { CColumn } from '../craft-components/layout/ccolumn/CColumn';
 import { CRow } from '../craft-components/layout/crow/CRow';
 import { RenderNode } from './editor-tools/RenderNode';
 import { NavBar } from './nav-bar/NavBar';
-import { createCanvasArea, RootCanvasArea } from './root-canvas-area/RootCanvasArea';
+import { RootCanvasArea } from './root-canvas-area/RootCanvasArea';
 import { defaultIconList } from './sider-bar/icon-list/default-icon-list';
 import { IconList } from './sider-bar/icon-list/IconList';
 import { SiderBar } from './sider-bar/SiderBar';
@@ -75,6 +75,7 @@ export const CraftDesigner = props => {
     showSiderBar = true,
     componentTypes = { ...defaultComponentTypes },
     iconList = defaultIconList,
+    pageData = '',
   } = props;
 
   return (
@@ -103,7 +104,9 @@ export const CraftDesigner = props => {
             autoHeightMax={'calc(100vh - 44px)'}
             thumbMinSize={30}
           >
-            {createCanvasArea()}
+            <Frame>
+              <Element is={RootCanvasArea} canvas pageData={pageData}></Element>
+            </Frame>
           </Scrollbars>
         </div>
         {showSiderBar ? (

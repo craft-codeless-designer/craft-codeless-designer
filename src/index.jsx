@@ -9,7 +9,7 @@ import { CRow } from './craft-components/layout/crow/CRow';
 import { CraftDesigner } from './designer/CraftDesigner';
 import { RenderNode } from './designer/editor-tools/RenderNode';
 import { NavBar } from './designer/nav-bar/NavBar';
-import { createCanvasArea, RootCanvasArea } from './designer/root-canvas-area/RootCanvasArea';
+import { RootCanvasArea } from './designer/root-canvas-area/RootCanvasArea';
 import { Icon } from './designer/sider-bar/icon-list/Icon';
 import { IconList } from './designer/sider-bar/icon-list/IconList';
 import { LayersPanel } from './designer/sider-bar/layers-panel/LayersPanel';
@@ -47,7 +47,6 @@ export {
   RenderNode,
   NavBar,
   RootCanvasArea,
-  createCanvasArea,
   IconList,
   SiderBar,
   SettingsContainer,
