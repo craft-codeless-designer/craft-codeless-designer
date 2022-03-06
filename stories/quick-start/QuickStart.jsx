@@ -44,6 +44,8 @@ export const QuickStart = props => {
   );
 };
 ~~~
+
+源代码： https://github.com/craft-codeless-designer/craft-codeless-designer 
 `;
 
 const doc = `

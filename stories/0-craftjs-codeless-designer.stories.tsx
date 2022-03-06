@@ -8,7 +8,7 @@ import { CustomSettings } from './custom-settings/CustomSettings';
 import { CustomSiderBar } from './custom-siderbar/CustomSiderbar';
 import { PreviewPage } from './preview-page/PreviewPage';
 import { QuickStart } from './quick-start/QuickStart';
-import { Serialization } from './serialization/Serialization';
+import { SaveAndLoad } from './save-and-load/SaveAndLoad';
 
 storiesOf('Craft-Codeless-Designer', module)
   .add('1.快速上手', () => (
@@ -33,7 +33,7 @@ storiesOf('Craft-Codeless-Designer', module)
   ))
   .add('5.存储和加载页面', () => (
     <React.StrictMode>
-      <Serialization></Serialization>
+      <SaveAndLoad></SaveAndLoad>
     </React.StrictMode>
   ))
   .add('6.自定义顶部导航', () => (
