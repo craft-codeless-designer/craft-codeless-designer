@@ -40,7 +40,7 @@ storiesOf('Craft-Codeless-Designer', module)
       <CustomNavbar></CustomNavbar>
     </React.StrictMode>
   ))
-  .add('7.自定义侧边栏', () => (
+  .add('7.自定义侧边工具栏', () => (
     <React.StrictMode>
       <CustomSiderBar></CustomSiderBar>
     </React.StrictMode>

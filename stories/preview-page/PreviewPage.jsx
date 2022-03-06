@@ -33,13 +33,11 @@ export const PreviewPage = props => {
       ></CraftDesigner>
 
       <div>
-        <h3 style={{ marginTop: '30px' }}>CraftDesinger 的主要特性：</h3>
+        <h3 style={{ marginTop: '30px' }}>预览页面</h3>
         <ul>
-          <li>CraftDesinger 可以整体引用，它是一个巨大的 React 组件，所有功能都集成在里面。</li>
-          <li>CraftDesinger 由3个区域构成：顶部导航条、主画布区域、右侧边栏。</li>
-          <li>内部的组件也可以拆开使用。</li>
-          <li>顶部套航条可以隐藏起来，也可以编写自己的导航条。</li>
-          <li>侧边栏可以隐藏起来，也可以编写自己的侧边栏。</li>
+          <li>把 CraftDesigner 的 enabled 设置为 false 会禁用所有编辑功能，此时只展示，不能编辑。</li>
+          <li>把 CraftDesigner 的 showNavBar 和 showSiderBar 设置为 false ，将不会渲染顶部的导航条和侧边工具栏。</li>
+          <li>关于 Editor 的更多参数，请参考 craftjs 官方文档： https://craft.js.org/docs/api/editor </li>
         </ul>
       </div>
     </>
