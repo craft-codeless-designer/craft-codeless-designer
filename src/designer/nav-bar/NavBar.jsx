@@ -80,7 +80,8 @@ const iconStyle = { color: '#fff' };
  * @author 大漠穷秋<damoqiongqiu@126.com>
  */
 export const NavBar = props => {
-  const { actions, query } = useEditor();
+  const { query } = useEditor();
+  const { onPreview, onDelete, onUndo, onRedo, onSaveData, onLoadData, onHelp } = props;
 
   return (
     <NavBarWrapper>
@@ -100,7 +101,12 @@ export const NavBar = props => {
                 <EyeOutlined
                   style={iconStyle}
                   onClick={evt => {
-                    props.onPreview && props.onPreview(evt);
+                    try {
+                      onPreview && onPreview(evt);
+                    } catch (error) {
+                      console.error(error);
+                      message.error(error);
+                    }
                   }}
                 />
               }
@@ -111,7 +117,12 @@ export const NavBar = props => {
                 <DeleteOutlined
                   style={iconStyle}
                   onClick={evt => {
-                    props.onDelete && props.onDelete(evt);
+                    try {
+                      onDelete && onDelete(evt);
+                    } catch (error) {
+                      console.error(error);
+                      message.error(error);
+                    }
                   }}
                 />
               }
@@ -122,7 +133,12 @@ export const NavBar = props => {
                 <UndoOutlined
                   style={iconStyle}
                   onClick={evt => {
-                    props.onUndo && props.onUndo(evt);
+                    try {
+                      onUndo && onUndo(evt);
+                    } catch (error) {
+                      console.error(error);
+                      message.error(error);
+                    }
                   }}
                 />
               }
@@ -133,7 +149,12 @@ export const NavBar = props => {
                 <RedoOutlined
                   style={iconStyle}
                   onClick={evt => {
-                    props.onRedo && props.onRedo(evt);
+                    try {
+                      onRedo && onRedo(evt);
+                    } catch (error) {
+                      console.error(error);
+                      message.error(error);
+                    }
                   }}
                 />
               }
@@ -145,7 +166,7 @@ export const NavBar = props => {
                 try {
                   const jsonStr = query.serialize();
                   console.log(jsonStr);
-                  props.onSaveData && props.onSaveData(jsonStr);
+                  onSaveData && onSaveData(jsonStr);
                 } catch (error) {
                   console.error(error);
                   message.error(error);
@@ -157,7 +178,7 @@ export const NavBar = props => {
               icon={<DownloadOutlined style={iconStyle} />}
               onClick={evt => {
                 try {
-                  props.onLoadData && props.onLoadData(evt);
+                  onLoadData && onLoadData(evt);
                 } catch (error) {
                   console.error(error);
                   message.error(error);
@@ -170,7 +191,12 @@ export const NavBar = props => {
                 <QuestionCircleOutlined
                   style={iconStyle}
                   onClick={evt => {
-                    props.onHelp && props.onHelp(evt);
+                    try {
+                      onHelp && onHelp(evt);
+                    } catch (error) {
+                      console.error(error);
+                      message.error(error);
+                    }
                   }}
                 />
               }

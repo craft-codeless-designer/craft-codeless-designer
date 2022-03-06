@@ -77,10 +77,11 @@ export const CraftDesigner = props => {
     componentTypes = { ...defaultComponentTypes },
     iconList = defaultIconList,
     pageData = '',
+    enabled = true,
   } = props;
 
   return (
-    <Editor resolver={componentTypes} onRender={RenderNode}>
+    <Editor resolver={componentTypes} onRender={enabled ? RenderNode : <></>} enabled={enabled}>
       <DataDeserializer pageData={pageData}></DataDeserializer>
       {showNavBar ? (
         <NavBar

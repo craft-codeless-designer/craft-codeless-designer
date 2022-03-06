@@ -9,7 +9,7 @@ export const QuickStart = props => {
   useEffect(() => {
     //TODO:在真实的业务系统中，这里会从 Server 端接口加载页面，参见 craft-codeless-designer-demo 项目。
     setPageData(testPageData);
-  }, [pageData]);
+  }, []);
 
   return (
     <>
@@ -27,7 +27,7 @@ export const QuickStart = props => {
             return null;
           }
           testData = JSON.parse(testData);
-          return testData;
+          setPageData(testData);
         }}
       ></CraftDesigner>
 
