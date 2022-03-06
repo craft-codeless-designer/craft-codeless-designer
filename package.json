@@ -1,6 +1,6 @@
 {
   "name": "craft-codeless-designer",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "repository": "https://github.com/craft-codeless-designer/craft-codeless-designer.git",
   "description": "An approach to build a Codeless Designer with React, and Craft.js.",
   "author": {
@@ -87,7 +87,10 @@
     "lint-staged": "10.3.0",
     "postcss": "^8.4.7",
     "prettier": "2.1.1",
+    "react-markdown": "^8.0.0",
+    "react-syntax-highlighter": "^15.4.5",
     "react-test-renderer": "16.13.1",
+    "remark-gfm": "^3.0.1",
     "rimraf": "3.0.2",
     "rollup": "2.28.2",
     "rollup-plugin-auto-external": "2.0.0",

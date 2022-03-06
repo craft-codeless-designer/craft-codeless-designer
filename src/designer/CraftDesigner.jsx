@@ -80,8 +80,6 @@ export const CraftDesigner = props => {
     enabled = true,
   } = props;
 
-  console.log(enabled);
-
   return (
     <Editor
       resolver={componentTypes}
