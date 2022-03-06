@@ -1,6 +1,6 @@
 {
   "name": "craft-codeless-designer",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "repository": "https://github.com/craft-codeless-designer/craft-codeless-designer.git",
   "description": "An approach to build a Codeless Designer with React, and Craft.js.",
   "author": {

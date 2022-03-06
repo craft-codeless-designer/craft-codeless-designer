@@ -81,7 +81,17 @@ export const CraftDesigner = props => {
   } = props;
 
   return (
-    <Editor resolver={componentTypes} onRender={enabled ? RenderNode : <></>} enabled={enabled}>
+    <Editor
+      resolver={componentTypes}
+      onRender={
+        enabled
+          ? RenderNode
+          : ({ render }) => {
+              return <>{render}</>;
+            }
+      }
+      enabled={enabled}
+    >
       <DataDeserializer pageData={pageData}></DataDeserializer>
       {showNavBar ? (
         <NavBar

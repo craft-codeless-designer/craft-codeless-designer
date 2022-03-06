@@ -14,6 +14,7 @@ export const QuickStart = props => {
   return (
     <>
       <CraftDesigner
+        enabled={false}
         pageData={pageData}
         onSaveData={jsonStr => {
           //FIXME:handle empty string.
