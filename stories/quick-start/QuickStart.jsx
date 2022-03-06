@@ -101,7 +101,7 @@ export const QuickStart = props => {
           },
         }}
       />
-
+      <br></br>
       <ReactMarkdown remarkPlugins={[remarkGfm]} children={doc}></ReactMarkdown>
     </>
   );
