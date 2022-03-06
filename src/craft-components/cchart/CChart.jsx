@@ -1,4 +1,4 @@
-import { useEditor, useNode } from '@craftjs/core';
+import { useNode } from '@craftjs/core';
 import ReactECharts from 'echarts-for-react';
 import React from 'react';
 import { CChartSettings } from './CChartSettings';
@@ -94,10 +94,6 @@ export const CChart = props => {
 
   const { chartOptions, width, maxWidth, height, minHeight, margin, padding, borderSize, borderType, borderColor, bgColor, children } = props;
 
-  const { enabled } = useEditor(state => ({
-    enabled: state.options.enabled,
-  }));
-
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -117,7 +113,7 @@ export const CChart = props => {
   };
 
   return (
-    <div ref={ref => connect(drag(ref))} style={calcStyle()}>
+    <div ref={connect} style={calcStyle()}>
       <ReactECharts option={chartOptions} style={{ width: '100%', height: '100%' }} />
     </div>
   );

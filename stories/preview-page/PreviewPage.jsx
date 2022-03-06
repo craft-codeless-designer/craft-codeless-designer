@@ -1,9 +1,9 @@
 import { message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { CraftDesigner } from '../../src/designer/CraftDesigner';
-import { testPageData } from './test-page-data';
+import { testPageData } from '../quick-start/test-page-data';
 
-export const QuickStart = props => {
+export const PreviewPage = props => {
   const [pageData, setPageData] = useState('');
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export const QuickStart = props => {
   return (
     <>
       <CraftDesigner
+        enabled={false}
         pageData={pageData}
         onSaveData={jsonStr => {
           //FIXME:handle empty string.

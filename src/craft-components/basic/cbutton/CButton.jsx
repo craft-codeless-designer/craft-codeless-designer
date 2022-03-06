@@ -15,7 +15,7 @@ export const CButton = props => {
     connectors: { connect, drag },
   } = useNode();
   const { text } = props;
-  return <Button ref={ref => connect(drag(ref))}>{text}</Button>;
+  return <Button ref={connect}>{text}</Button>;
 };
 
 export const CButtonDefaultProps = {

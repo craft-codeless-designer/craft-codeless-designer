@@ -38,7 +38,7 @@ export const CRow = props => {
 
   return (
     <div
-      ref={ref => connect(drag(ref))}
+      ref={connect}
       // 这里需要根据 props 中传递的参数重新拼接 CSS 样式
       style={{
         margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,

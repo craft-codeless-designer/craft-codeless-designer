@@ -55,7 +55,7 @@ export const CColumn = props => {
   };
 
   return (
-    <div ref={ref => connect(drag(ref))} style={calcStyle()}>
+    <div ref={connect} style={calcStyle()}>
       {children}
     </div>
   );
