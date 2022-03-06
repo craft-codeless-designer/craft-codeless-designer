@@ -17,7 +17,7 @@ const doc1 = `
 - 第一步：编写一个普通的 React 组件，或者引入开源组件库中的组件。
 - 第二步：编写一个 Craft 包装组件，用来包装普通的 React 组件，并暴露给 Editor。
 - 第三步：给组件编写一个可拖拽的图标。
-- 第四步：给组件编写对应的配置Panel。
+- 第四步：给组件编写对应的 Settings 面板。
 
 **此文档描述第一步到第三步，第四步在下一节单独描述。**
 `;
@@ -91,7 +91,7 @@ export const CMyComponent = props => {
 
   return (
     <div
-      ref={ref => connect(drag(ref))}
+      ref={connect}
       // 这里需要根据 props 中传递的参数重新拼接 CSS 样式
       style={{
         margin: \`\${margin[0]}px \${margin[1]}px \${margin[2]}px \${margin[3]}px\`,

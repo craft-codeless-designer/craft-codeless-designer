@@ -1,5 +1,6 @@
 import { useNode } from '@craftjs/core';
 import React from 'react';
+import { CMyComponentSettings } from './CMyComponentSettings';
 import { MyComponent } from './MyComponent';
 
 const defaultProps = {
@@ -54,4 +55,7 @@ export const CMyComponent = props => {
 CMyComponent.craft = {
   displayName: 'CMyComponent',
   props: defaultProps,
+  related: {
+    toolbar: CMyComponentSettings,
+  },
 };

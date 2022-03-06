@@ -31,7 +31,7 @@ storiesOf('Craft-Codeless-Designer', module)
       <CustomSettings></CustomSettings>
     </React.StrictMode>
   ))
-  .add('5.序列化和加载', () => (
+  .add('5.存储和加载页面', () => (
     <React.StrictMode>
       <Serialization></Serialization>
     </React.StrictMode>
