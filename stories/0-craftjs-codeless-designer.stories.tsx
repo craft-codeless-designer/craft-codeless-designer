@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import 'antd/dist/antd.css'; //This file is in node_modules
 import React from 'react';
+import API from './api/API';
 import { CustomComponent } from './custom-component/CustomComponent';
 import { CustomNavbar } from './custom-navbar/CustomNavbar';
 import { CustomSettings } from './custom-settings/CustomSettings';
@@ -47,6 +48,6 @@ storiesOf('Craft-Codeless-Designer', module)
   ))
   .add('8.API', () => (
     <React.StrictMode>
-      <CustomSiderBar></CustomSiderBar>
+      <API></API>
     </React.StrictMode>
   ));
