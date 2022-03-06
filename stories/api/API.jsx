@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default API = props => {
+export const API = props => {
   return <div>完整 API 文档</div>;
 };
