@@ -7,7 +7,16 @@ import remarkGfm from 'remark-gfm';
 import { CraftDesigner } from '../../src/designer/CraftDesigner';
 import { testPageData } from './test-page-data';
 
-const jscode = `# 1.此例子的代码
+const doc = `# 🚀快速上手
+## 1.CraftDesinger 的主要特性
+- CraftDesinger 是一个普通的 React 组件，只是功能比较复杂，所有编辑功能都集成在这个组件里面。           
+- CraftDesinger 由3个区域构成：顶部导航条、主画布区域、右侧边栏。 
+- CraftDesigner 可以像一个普通的 React 组件一样被嵌入在任意组件中，但是由于它的功能比较复杂，建议弹出新的浏览器窗口来使用它。这是一个完整功能的示例项目： https://github.com/craft-codeless-designer/craft-codeless-designer-demo
+- 内部的组件也可以拆开使用。 
+- 顶部套航条可以隐藏起来，也可以编写自己的导航条。 
+- 侧边栏可以隐藏起来，也可以编写自己的侧边栏。`;
+
+const jscode = `## 2.此例子的代码
 
 ~~~js
 export const QuickStart = props => {
@@ -48,15 +57,6 @@ export const QuickStart = props => {
 源代码： https://github.com/craft-codeless-designer/craft-codeless-designer 
 `;
 
-const doc = `
-# 2.CraftDesinger 的主要特性
-- CraftDesinger 是一个普通的 React 组件，只是功能比较复杂，所有编辑功能都集成在这个组件里面。           
-- CraftDesinger 由3个区域构成：顶部导航条、主画布区域、右侧边栏。 
-- CraftDesigner 可以像一个普通的 React 组件一样被嵌入在任意组件中，但是由于它的功能比较复杂，建议弹出新的浏览器窗口来使用它。这是一个完整功能的示例项目： https://github.com/craft-codeless-designer/craft-codeless-designer-demo
-- 内部的组件也可以拆开使用。 
-- 顶部套航条可以隐藏起来，也可以编写自己的导航条。 
-- 侧边栏可以隐藏起来，也可以编写自己的侧边栏。`;
-
 export const QuickStart = props => {
   const [pageData, setPageData] = useState('');
 
@@ -67,6 +67,8 @@ export const QuickStart = props => {
 
   return (
     <>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} children={doc}></ReactMarkdown>
+      <br></br>
       {/* CraftDesigner 自身是一个普通的 React 组件，它的用法与普通的 React 组件没有差异，只是它的外观和功能比较复杂。 */}
       <CraftDesigner
         pageData={pageData} // 传递初始数据，格式为 JSON
@@ -104,7 +106,6 @@ export const QuickStart = props => {
         }}
       />
       <br></br>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} children={doc}></ReactMarkdown>
     </>
   );
 };

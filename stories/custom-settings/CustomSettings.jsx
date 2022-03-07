@@ -11,7 +11,7 @@ import { defaultIconList, iconStyle } from '../../src/designer/sider-bar/icon-li
 import { Icon } from '../../src/designer/sider-bar/icon-list/Icon';
 import { CMyComponent } from './CMyComponent';
 
-const doc1 = `# 组件对应的 Settings
+const doc1 = `# 🛠️组件对应的 Settings
 
 **此文档描述自定义组件的第四步，自定义组件的属性配置面板。**
 

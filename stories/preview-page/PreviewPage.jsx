@@ -7,7 +7,13 @@ import remarkGfm from 'remark-gfm';
 import { CraftDesigner } from '../../src/designer/CraftDesigner';
 import { testPageData } from '../quick-start/test-page-data';
 
-const jscode = `# 1.此例子的代码
+const doc = `# 👨‍💻预览页面
+## 1.注意点
+- 把 CraftDesigner 的 enabled 设置为 false 会禁用所有编辑功能，此时只展示，不能编辑。          
+- 把 CraftDesigner 的 showNavBar 和 showSiderBar 设置为 false ，将不会渲染顶部的导航条和侧边工具栏。
+- 关于 Editor 的更多参数，请参考 craftjs 官方文档： https://craft.js.org/docs/api/editor `;
+
+const jscode = `# 2.此例子的代码
 
 ~~~js
 export const PreviewPage = props => {
@@ -46,12 +52,6 @@ export const PreviewPage = props => {
 ~~~
 `;
 
-const doc = `
-# 2.预览页面
-- 把 CraftDesigner 的 enabled 设置为 false 会禁用所有编辑功能，此时只展示，不能编辑。          
-- 把 CraftDesigner 的 showNavBar 和 showSiderBar 设置为 false ，将不会渲染顶部的导航条和侧边工具栏。
-- 关于 Editor 的更多参数，请参考 craftjs 官方文档： https://craft.js.org/docs/api/editor `;
-
 export const PreviewPage = props => {
   const [pageData, setPageData] = useState('');
 
@@ -62,6 +62,8 @@ export const PreviewPage = props => {
 
   return (
     <>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} children={doc}></ReactMarkdown>
+      <br></br>
       <CraftDesigner
         enabled={false} //enabled 设置为 false ，可以禁用所有编辑功能，此时仅仅渲染出页面。
         pageData={pageData} // 传递初始数据，格式为 JSON
@@ -98,8 +100,6 @@ export const PreviewPage = props => {
           },
         }}
       />
-      <br></br>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} children={doc}></ReactMarkdown>
     </>
   );
 };

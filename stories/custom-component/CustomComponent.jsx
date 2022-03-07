@@ -12,7 +12,7 @@ import { Icon } from '../../src/designer/sider-bar/icon-list/Icon';
 import { CMyComponent } from './CMyComponent';
 
 const doc1 = `
-# 自定义组件
+# 📝自定义组件
 ## 1.自定义组件的步骤：
 - 第一步：编写一个普通的 React 组件，或者引入开源组件库中的组件。
 - 第二步：编写一个 Craft 包装组件，用来包装普通的 React 组件，并暴露给 Editor。
