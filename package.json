@@ -12,7 +12,7 @@
     "start": "npm run storybook",
     "build-prod": "cross-env NODE_ENV=production rollup -c",
     "build-dev": "cross-env NODE_ENV=development rollup -c",
-    "build-storybook": "cross-env NODE_ENV=development build-storybook -c .storybook -o .out",
+    "build-storybook": "cross-env NODE_ENV=development build-storybook -c .storybook -o docs",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 6006"
   },
   "main": "dist/index.js",
