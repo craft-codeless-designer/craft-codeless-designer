@@ -6,7 +6,7 @@ import { CraftDesigner } from '../../src/designer/CraftDesigner';
 import { testPageData } from './test-page-data';
 
 const doc = `
-# 💾存储与加载
+# 💾存储和加载页面
 - 请点击右上角的保存和加载按钮测试存储和加载功能。
 - Craft 会把页面序列化成 JSON 数据。           
 - 此例子中的数据被存储在 window.localStorage 中，在真实的业务系统中，可以把这份 JSON 数据保存到数据库。 带服务端接口的示例请参考： https://github.com/craft-codeless-designer/craft-codeless-designer-demo
