@@ -26,7 +26,7 @@ const doc2 = `
 ## 2.运行效果（右侧列表中的 MyComponent 是自定义组件)：
 `;
 
-const jscode1 = `# 3.MyComponent 组件的代码：
+const jscode1 = `## 3.MyComponent 组件的代码：
 
 ~~~js
 import { Card } from 'antd';
@@ -52,7 +52,7 @@ export const MyComponent = props => {
 ~~~
 `;
 
-const jscode2 = `# 4.包装组件 CMyComponent 的代码：
+const jscode2 = `## 4.包装组件 CMyComponent 的代码：
 
 ~~~js
 import { useNode } from '@craftjs/core';
@@ -115,7 +115,7 @@ CMyComponent.craft = {
 ~~~
 `;
 
-const jscode3 = `# 3.把包装组件的类型以及对应的图标传递给 CraftEditor ：
+const jscode3 = `## 5.把包装组件的类型以及对应的图标传递给 CraftEditor ：
 
 ~~~js
 //对于自定义的组件，需要把组件本身的构造函数引用传递进去，这样 Editor 才能识别组件的类型。
